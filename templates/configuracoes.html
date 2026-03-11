@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% block title %}Configurações{% endblock %}
+{% block topbar_title %}Configurações{% endblock %}
+{% block topbar_sub %}Vínculo de impressoras aos dias de fechamento{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+    <div>
+      <div class="card-title">Impressoras Cadastradas</div>
+      <div class="card-sub">Defina o dia de fechamento para cada impressora. Impressoras inativas não entram nos relatórios.</div>
+    </div>
+    <button class="btn btn-primary" onclick="salvarConfig()">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+      </svg>
+      Salvar Configurações
+    </button>
+  </div>
+
+  <!-- Search -->
+  <div style="margin-bottom:16px; display:flex; gap:10px;">
+    <input
+      class="field"
+      style="width:280px;"
+      type="text"
+      id="search"
+      placeholder="Buscar por cliente ou serial..."
+      oninput="filtrar()"
+    />
+    <select class="field" id="filtro-dia" onchange="filtrar()">
+      <option value="">Todos os dias</option>
+      <option value="10">Dia 10</option>
+      <option value="20">Dia 20</option>
+      <option value="30">Dia 30</option>
+      <option value="sem">Sem fechamento</option>
+    </select>
+  </div>
+
+  {% if printers %}
+  <div style="overflow-x:auto;">
+    <table class="data-table" id="tabela">
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Modelo</th>
+          <th>Serial / Patrimônio</th>
+          <th>Dia Fechamento</th>
+          <th>Ativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in printers %}
+        <tr
+          data-id="{{ p.printer_id }}"
+          data-serial="{{ p.serial }}"
+          data-cliente="{{ p.cliente }}"
+          data-modelo="{{ p.modelo }}"
+          data-patrimonio="{{ p.patrimonio }}"
+          class="printer-row"
+        >
+          <td>
+            <span style="font-family:'Syne',sans-serif; font-weight:600;">{{ p.cliente }}</span>
+          </td>
+          <td style="color:var(--muted);">{{ p.modelo }}</td>
+          <td>
+            <div style="font-size:11px;">{{ p.serial }}</div>
+            <div style="font-size:10px; color:var(--muted);">Patrim. {{ p.patrimonio }}</div>
+          </td>
+          <td>
+            <select
+              class="field dia-select"
+              data-id="{{ p.printer_id }}"
+            >
+              <option value="" {% if not p.dia_fechamento %}selected{% endif %}>— Não definido</option>
+              <option value="10" {% if p.dia_fechamento == 10 %}selected{% endif %}>Dia 10</option>
+              <option value="20" {% if p.dia_fechamento == 20 %}selected{% endif %}>Dia 20</option>
+              <option value="30" {% if p.dia_fechamento == 30 %}selected{% endif %}>Dia 30</option>
+            </select>
+          </td>
+          <td>
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+              <div class="toggle-wrap">
+                <input
+                  type="checkbox"
+                  class="ativo-check"
+                  data-id="{{ p.printer_id }}"
+                  {% if p.ativo %}checked{% endif %}
+                  style="display:none;"
+                  onchange="updateToggle(this)"
+                />
+                <div class="toggle {% if p.ativo %}on{% endif %}" onclick="toggleClick(this)">
+                  <div class="toggle-knob"></div>
+                </div>
+              </div>
+              <span class="toggle-label" style="font-size:11px; color:var(--muted);">
+                {% if p.ativo %}Ativo{% else %}Inativo{% endif %}
+              </span>
+            </label>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <div class="empty-state-icon">🖨️</div>
+    <div class="empty-state-text">Nenhuma impressora encontrada.<br>Faça uma coleta primeiro na tela de Snapshots.</div>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+  .toggle-wrap { position: relative; }
+  .toggle {
+    width: 36px; height: 20px;
+    background: var(--border2);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .toggle.on { background: var(--accent); }
+  .toggle-knob {
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 14px; height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+  .toggle.on .toggle-knob { transform: translateX(16px); }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Toggle click
+  function toggleClick(el) {
+    el.classList.toggle('on');
+    const row = el.closest('tr');
+    const label = row.querySelector('.toggle-label');
+    const isOn = el.classList.contains('on');
+    label.textContent = isOn ? 'Ativo' : 'Inativo';
+  }
+
+  // Filtro de busca
+  function filtrar() {
+    const q    = document.getElementById('search').value.toLowerCase();
+    const dia  = document.getElementById('filtro-dia').value;
+    document.querySelectorAll('.printer-row').forEach(row => {
+      const cliente   = row.dataset.cliente.toLowerCase();
+      const serial    = row.dataset.serial.toLowerCase();
+      const select    = row.querySelector('.dia-select');
+      const diaValor  = select ? select.value : '';
+
+      const matchQ   = !q || cliente.includes(q) || serial.includes(q);
+      const matchDia = !dia
+        || (dia === 'sem' && !diaValor)
+        || (dia !== 'sem' && diaValor === dia);
+
+      row.style.display = (matchQ && matchDia) ? '' : 'none';
+    });
+  }
+
+  // Salvar config
+  async function salvarConfig() {
+    const impressoras = [];
+    document.querySelectorAll('.printer-row').forEach(row => {
+      const id     = row.dataset.id;
+      const select = row.querySelector('.dia-select');
+      const toggle = row.querySelector('.toggle');
+      const diaVal = select ? select.value : '';
+
+      impressoras.push({
+        printer_id:     id,
+        serial:         row.dataset.serial,
+        cliente:        row.dataset.cliente,
+        modelo:         row.dataset.modelo,
+        patrimonio:     row.dataset.patrimonio,
+        dia_fechamento: diaVal ? parseInt(diaVal) : null,
+        ativo:          toggle ? toggle.classList.contains('on') : true,
+      });
+    });
+
+    showLoading('Salvando configurações...');
+    try {
+      const res = await fetch('/api/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ impressoras }),
+      });
+      const data = await res.json();
+      hideLoading();
+      if (data.ok) showToast('Configurações salvas com sucesso!', 'success');
+      else showToast('Erro ao salvar.', 'error');
+    } catch(e) {
+      hideLoading();
+      showToast('Erro de comunicação.', 'error');
+    }
+  }
+</script>
+{% endblock %}

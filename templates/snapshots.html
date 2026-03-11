@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Snapshots{% endblock %}
+{% block topbar_title %}Snapshots{% endblock %}
+{% block topbar_sub %}Histórico de coletas da API Printwayy{% endblock %}
+
+{% block content %}
+<!-- Stats -->
+<div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-bottom:28px;">
+  <div class="stat-card">
+    <div class="stat-label">Total de Snapshots</div>
+    <div class="stat-value">{{ snapshots|length }}</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Última Coleta</div>
+    <div class="stat-value" style="font-size:16px; margin-top:10px;">
+      {% if snapshots %}
+        {{ snapshots[0].captured_at[8:10] }}/{{ snapshots[0].captured_at[5:7] }}/{{ snapshots[0].captured_at[:4] }}
+      {% else %}
+        —
+      {% endif %}
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Impressoras (último)</div>
+    <div class="stat-value">
+      {% if snapshots %}{{ snapshots[0].total }}{% else %}—{% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- Actions -->
+<div class="card">
+  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+    <div>
+      <div class="card-title">Histórico de Coletas</div>
+      <div class="card-sub">Snapshots dos últimos 30 dias</div>
+    </div>
+    <button class="btn btn-primary" onclick="coletar()">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+      </svg>
+      Coletar Agora
+    </button>
+  </div>
+
+  {% if snapshots %}
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data / Hora</th>
+        <th>Impressoras</th>
+        <th>Arquivo</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="snapshot-list">
+      {% for s in snapshots %}
+      <tr>
+        <td>
+          <span style="font-family:'Syne',sans-serif; font-weight:600; color:var(--text);">
+            {{ s.captured_at[8:10] }}/{{ s.captured_at[5:7] }}/{{ s.captured_at[:4] }}
+          </span>
+          <span style="color:var(--muted); margin-left:8px;">
+            {{ s.captured_at[11:16] }}
+          </span>
+        </td>
+        <td>
+          <span class="badge badge-accent">{{ s.total }} impressoras</span>
+        </td>
+        <td style="color:var(--muted); font-size:11px;">{{ s.filename }}</td>
+        <td>
+          <a href="/fechamento?snapshot={{ s.filename }}" class="btn btn-ghost btn-sm">
+            Usar no fechamento →
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <div class="empty-state">
+    <div class="empty-state-icon">📭</div>
+    <div class="empty-state-text">Nenhum snapshot encontrado.<br>Clique em <strong>Coletar Agora</strong> para iniciar.</div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function coletar() {
+  showLoading('Coletando dados da API Printwayy...\nIsso pode levar alguns minutos.');
+  try {
+    const res = await fetch('/api/coletar', { method: 'POST' });
+    const data = await res.json();
+    hideLoading();
+    if (data.ok) {
+      showToast('Coleta concluída com sucesso!', 'success');
+      setTimeout(() => location.reload(), 1500);
+    } else {
+      showToast('Erro na coleta: ' + data.erro, 'error', 8000);
+    }
+  } catch(e) {
+    hideLoading();
+    showToast('Erro de comunicação com o servidor.', 'error');
+  }
+}
+</script>
+{% endblock %}

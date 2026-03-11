@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+{% block title %}Gerar Fechamento{% endblock %}
+{% block topbar_title %}Gerar Fechamento{% endblock %}
+{% block topbar_sub %}Selecione o snapshot e o dia para gerar os PDFs{% endblock %}
+
+{% block content %}
+<div style="display:grid; grid-template-columns:340px 1fr; gap:24px; align-items:start;">
+
+  <!-- Painel esquerdo: seleção -->
+  <div style="display:flex; flex-direction:column; gap:16px;">
+    <div class="card">
+      <div class="card-title">Parâmetros</div>
+      <div class="card-sub">Configure o fechamento</div>
+
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div>
+          <label style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-family:'Syne',sans-serif; display:block; margin-bottom:6px;">
+            Snapshot de Referência
+          </label>
+          <select class="field" id="sel-snapshot" style="width:100%;" onchange="resetPreview()">
+            <option value="">— Selecione —</option>
+            {% for s in snapshots %}
+            <option value="{{ s.filename }}">
+              {{ s.captured_at[8:10] }}/{{ s.captured_at[5:7] }}/{{ s.captured_at[:4] }} {{ s.captured_at[11:16] }} — {{ s.total }} impressoras
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-family:'Syne',sans-serif; display:block; margin-bottom:6px;">
+            Dia de Fechamento
+          </label>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+            {% for dia in [10, 20, 30] %}
+            <button
+              class="dia-btn"
+              data-dia="{{ dia }}"
+              onclick="selectDia({{ dia }})"
+              style="padding:12px; border-radius:8px; border:1px solid var(--border2); background:var(--bg); color:var(--muted); font-family:'Syne',sans-serif; font-size:13px; font-weight:700; cursor:pointer; transition:all .15s;"
+            >
+              Dia {{ dia }}
+            </button>
+            {% endfor %}
+          </div>
+        </div>
+
+        <button class="btn btn-ghost" style="width:100%; justify-content:center;" onclick="preview()">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+          Pré-visualizar
+        </button>
+      </div>
+    </div>
+
+    <!-- Info card -->
+    <div class="card" id="info-card" style="display:none;">
+      <div class="card-title">Resumo</div>
+      <div style="margin-top:12px; display:flex; flex-direction:column; gap:8px;" id="info-content"></div>
+    </div>
+  </div>
+
+  <!-- Painel direito: preview + gerar -->
+  <div class="card" style="min-height:400px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+      <div>
+        <div class="card-title">Pré-visualização</div>
+        <div class="card-sub" id="preview-sub">Selecione o snapshot e o dia para ver as impressoras</div>
+      </div>
+      <button class="btn btn-primary" id="btn-gerar" onclick="gerar()" style="display:none;">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        Gerar PDFs
+      </button>
+    </div>
+
+    <div id="preview-content">
+      <div class="empty-state">
+        <div class="empty-state-icon">📋</div>
+        <div class="empty-state-text">Aguardando seleção...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dia-btn.selected {
+    background: rgba(61,95,224,0.10) !important;
+    color: var(--accent) !important;
+    border-color: rgba(61,95,224,0.4) !important;
+  }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  let selectedDia = null;
+
+  // Pré-seleciona snapshot por query param
+  const params = new URLSearchParams(location.search);
+  const preSnap = params.get('snapshot');
+  if (preSnap) {
+    const sel = document.getElementById('sel-snapshot');
+    for (let opt of sel.options) {
+      if (opt.value === preSnap) { opt.selected = true; break; }
+    }
+  }
+
+  function selectDia(dia) {
+    selectedDia = dia;
+    document.querySelectorAll('.dia-btn').forEach(b => {
+      b.classList.toggle('selected', parseInt(b.dataset.dia) === dia);
+    });
+    resetPreview();
+  }
+
+  function resetPreview() {
+    document.getElementById('btn-gerar').style.display = 'none';
+    document.getElementById('info-card').style.display = 'none';
+    document.getElementById('preview-sub').textContent = 'Selecione o snapshot e o dia para ver as impressoras';
+    document.getElementById('preview-content').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">📋</div>
+        <div class="empty-state-text">Aguardando seleção...</div>
+      </div>`;
+  }
+
+  async function preview() {
+    const snapshot = document.getElementById('sel-snapshot').value;
+    if (!snapshot) { showToast('Selecione um snapshot.', 'error'); return; }
+    if (!selectedDia) { showToast('Selecione o dia de fechamento.', 'error'); return; }
+
+    showLoading('Carregando impressoras...');
+    try {
+      const res = await fetch('/api/fechamento/preview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ snapshot, dia: selectedDia }),
+      });
+      const data = await res.json();
+      hideLoading();
+
+      if (!data.ok) { showToast('Erro ao carregar preview.', 'error'); return; }
+
+      const list = data.impressoras;
+      document.getElementById('preview-sub').textContent =
+        `${list.length} impressora(s) configuradas para o dia ${selectedDia}`;
+
+      if (list.length === 0) {
+        document.getElementById('preview-content').innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">⚠️</div>
+            <div class="empty-state-text">Nenhuma impressora configurada para o dia ${selectedDia}.<br>Acesse <strong>Configurações</strong> para definir os vínculos.</div>
+          </div>`;
+        return;
+      }
+
+      // Totais para info card
+      const totalPB  = list.reduce((a, p) => a + p.total_pb, 0);
+      const totalCor = list.reduce((a, p) => a + p.total_cor, 0);
+      document.getElementById('info-content').innerHTML = `
+        <div style="display:flex;justify-content:space-between;font-size:12px;">
+          <span style="color:var(--muted);">Impressoras</span>
+          <span style="font-family:'Syne',sans-serif;font-weight:700;">${list.length}</span>
+        </div>
+        <div style="height:1px;background:var(--border);"></div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;">
+          <span style="color:var(--muted);">Total P&B</span>
+          <span style="font-family:'Syne',sans-serif;font-weight:700;">${totalPB.toLocaleString('pt-BR')}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;">
+          <span style="color:var(--muted);">Total Colorido</span>
+          <span style="font-family:'Syne',sans-serif;font-weight:700;">${totalCor.toLocaleString('pt-BR')}</span>
+        </div>
+        <div style="height:1px;background:var(--border);"></div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;">
+          <span style="color:var(--muted);">Total Geral</span>
+          <span style="font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);">${(totalPB+totalCor).toLocaleString('pt-BR')}</span>
+        </div>`;
+      document.getElementById('info-card').style.display = 'block';
+
+      // Tabela
+      let rows = list.map(p => `
+        <tr>
+          <td><span style="font-family:'Syne',sans-serif;font-weight:600;">${p.cliente}</span></td>
+          <td style="color:var(--muted);font-size:11px;">${p.modelo}</td>
+          <td style="font-size:11px;">${p.serial}</td>
+          <td style="font-size:11px;color:var(--muted);">${p.patrimonio}</td>
+          <td style="text-align:right;">${p.total_pb.toLocaleString('pt-BR')}</td>
+          <td style="text-align:right;">${p.total_cor.toLocaleString('pt-BR')}</td>
+          <td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);">
+            ${p.total.toLocaleString('pt-BR')}
+          </td>
+        </tr>`).join('');
+
+      document.getElementById('preview-content').innerHTML = `
+        <div style="overflow-x:auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cliente</th><th>Modelo</th><th>Serial</th>
+                <th>Patrimônio</th><th style="text-align:right;">P&B</th>
+                <th style="text-align:right;">Colorido</th>
+                <th style="text-align:right;">Total</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
+
+      document.getElementById('btn-gerar').style.display = 'inline-flex';
+    } catch(e) {
+      hideLoading();
+      showToast('Erro de comunicação.', 'error');
+    }
+  }
+
+  async function gerar() {
+    const snapshot = document.getElementById('sel-snapshot').value;
+    showLoading(`Gerando PDFs do fechamento dia ${selectedDia}...`);
+    try {
+      const res = await fetch('/api/fechamento/gerar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ snapshot, dia: selectedDia }),
+      });
+      const data = await res.json();
+      hideLoading();
+      if (data.ok) {
+        showToast(`${data.gerados.length} arquivo(s) gerado(s) em:\n${data.pasta}`, 'success', 7000);
+      } else {
+        showToast('Erro ao gerar PDFs.', 'error');
+      }
+    } catch(e) {
+      hideLoading();
+      showToast('Erro de comunicação.', 'error');
+    }
+  }
+</script>
+{% endblock %}
