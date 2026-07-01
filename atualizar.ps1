@@ -115,33 +115,43 @@ try {
     $pip = Join-Path $Root 'venv\Scripts\pip.exe'
     & $pip install -r (Join-Path $Root 'requirements.txt') -q --disable-pip-version-check
 
-    # ---- 8) Reinicia o app em segundo plano -------------------------------
-    Step 'Reiniciando o app...'
-    $pyw   = Join-Path $Root 'venv\Scripts\pythonw.exe'
-    $appPy = Join-Path $Root 'app.py'
-    # Chamada direta via .NET (CreateProcess puro): evita as quirks do
-    # Start-Process com working directory / perfil de usuario em algumas maquinas.
-    $psi = New-Object System.Diagnostics.ProcessStartInfo
-    $psi.FileName         = $pyw
-    $psi.Arguments        = '"' + $appPy + '"'
-    $psi.WorkingDirectory = $Root
-    $psi.UseShellExecute  = $false
-    [System.Diagnostics.Process]::Start($psi) | Out-Null
+    # A atualizacao (codigo + dependencias) ja foi aplicada com sucesso aqui.
+    # A partir deste ponto, qualquer falha NAO invalida o update.
 
-    # ---- 9) Limpeza --------------------------------------------------------
+    # ---- 8) Limpeza --------------------------------------------------------
     Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue
+
+    # ---- 9) Reinicia o app (best-effort) ----------------------------------
+    # Usa o mesmo mecanismo do start.bat (comando 'start' do cmd), que ja
+    # funciona nesta maquina. Se falhar, apenas avisamos para rodar start.bat.
+    Step 'Reiniciando o app...'
+    $restarted = $false
+    try {
+        $pyw   = Join-Path $Root 'venv\Scripts\pythonw.exe'
+        $appPy = Join-Path $Root 'app.py'
+        $cmdline = 'start "MHTech" /B "' + $pyw + '" "' + $appPy + '"'
+        & cmd.exe /c $cmdline
+        $restarted = $true
+    } catch {
+        $restarted = $false
+    }
 
     Write-Host ''
     Write-Host "  Atualizado com sucesso para a versao v$remoteNorm!" -ForegroundColor Green
-    Write-Host '  Acesse: http://localhost:5000'
+    if ($restarted) {
+        Write-Host '  App reiniciado. Acesse: http://localhost:5000'
+    } else {
+        Write-Host '  Nao consegui reiniciar o app automaticamente.' -ForegroundColor Yellow
+        Write-Host '  Rode o "start.bat" (ou reinicie o Windows) para subir o sistema.'
+    }
     Write-Host ''
 }
 catch {
     Write-Host ''
     Write-Host '  ERRO durante a atualizacao:' -ForegroundColor Red
     Write-Host "  $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "  [tipo: $($_.Exception.GetType().Name) | linha: $($_.InvocationInfo.ScriptLineNumber)]" -ForegroundColor DarkGray
     Write-Host ''
-    Write-Host '  O app pode ter sido encerrado. Tente rodar "start.bat" para reinicia-lo,'
-    Write-Host '  ou execute "atualizar.bat" novamente.'
+    Write-Host '  Se o codigo ja foi aplicado, rode o "start.bat" para subir o app.'
     exit 1
 }
