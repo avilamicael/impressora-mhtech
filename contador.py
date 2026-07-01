@@ -9,9 +9,9 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.ssl_ import create_urllib3_context
 
 # -- Encoding fix (Windows cp1252 -> UTF-8) ------------------------------------
-if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+if sys.stdout and sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-if sys.stderr.encoding and sys.stderr.encoding.lower() != 'utf-8':
+if sys.stderr and sys.stderr.encoding and sys.stderr.encoding.lower() != 'utf-8':
     sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 
 # -- Fix SSL renegotiation (Windows / schannel) --------------------------------
@@ -76,14 +76,14 @@ _SESSION.headers.update({
 
 @dataclass
 class Counter:
-    type: str           # blackAndWhite | color | scanner
+    type: str           # blackAndWhite | color | scan
     date_of_capture: str
     total_count: int
 
     TYPE_LABELS = {
         "blackAndWhite": "P&B",
         "color":         "Colorido",
-        "scanner":       "Scanner",
+        "scan":          "Scanner",
     }
 
     @classmethod
@@ -508,7 +508,7 @@ def display_printer(printer: Printer) -> None:
     # Totais por tipo de contador
     bw_total    = next((c.total_count for c in printer.counters if c.type == "blackAndWhite"), 0)
     color_total = next((c.total_count for c in printer.counters if c.type == "color"), 0)
-    scan_total  = next((c.total_count for c in printer.counters if c.type == "scanner"), 0)
+    scan_total  = next((c.total_count for c in printer.counters if c.type == "scan"), 0)
     total_geral = bw_total + color_total
 
     lines = [
@@ -558,6 +558,16 @@ def display_printer(printer: Printer) -> None:
 
     lines.append(sep)
     print("\n".join(lines))
+
+
+# -- Importável ----------------------------------------------------------------
+
+def run_collection() -> Path:
+    """Importável: coleta dados, salva snapshot e limpa antigos. Retorna o Path do snapshot."""
+    printers = fetch_printers_with_counters()
+    snapshot_path = save_snapshot(printers)
+    purge_old_snapshots()
+    return snapshot_path
 
 
 # -- Main ----------------------------------------------------------------------

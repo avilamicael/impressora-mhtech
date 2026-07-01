@@ -14,7 +14,7 @@
     <div class="stat-label">Última Coleta</div>
     <div class="stat-value" style="font-size:16px; margin-top:10px;">
       {% if snapshots %}
-        {{ snapshots[0].captured_at[8:10] }}/{{ snapshots[0].captured_at[5:7] }}/{{ snapshots[0].captured_at[:4] }}
+        {{ snapshots[0].captured_at[8:10] }}/{{ snapshots[0].captured_at[5:7] }}/{{ snapshots[0].captured_at[2:4] }}
       {% else %}
         —
       {% endif %}
@@ -28,19 +28,35 @@
   </div>
 </div>
 
-<!-- Actions -->
+
+<!-- Fechamento -->
+<div class="card" style="margin-bottom:24px;">
+  <div style="margin-bottom:16px;">
+    <div class="card-title">Fechamento</div>
+    <div class="card-sub">
+      Coleta os dados da API e gera os PDFs de uma vez para o dia selecionado.
+      <strong>Atenção: PDFs existentes serão sobrescritos.</strong>
+    </div>
+  </div>
+  <div style="display:flex; gap:12px; flex-wrap:wrap;">
+    {% for dia in [10, 20, 30] %}
+    <button class="btn btn-primary" onclick="fechar({{ dia }})">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+      </svg>
+      Fechamento Dia {{ dia }}
+    </button>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Histórico -->
 <div class="card">
   <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
     <div>
       <div class="card-title">Histórico de Coletas</div>
       <div class="card-sub">Snapshots dos últimos 30 dias</div>
     </div>
-    <button class="btn btn-primary" onclick="coletar()">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-      </svg>
-      Coletar Agora
-    </button>
   </div>
 
   {% if snapshots %}
@@ -50,7 +66,6 @@
         <th>Data / Hora</th>
         <th>Impressoras</th>
         <th>Arquivo</th>
-        <th>Ações</th>
       </tr>
     </thead>
     <tbody id="snapshot-list">
@@ -58,7 +73,7 @@
       <tr>
         <td>
           <span style="font-family:'Syne',sans-serif; font-weight:600; color:var(--text);">
-            {{ s.captured_at[8:10] }}/{{ s.captured_at[5:7] }}/{{ s.captured_at[:4] }}
+            {{ s.captured_at[8:10] }}/{{ s.captured_at[5:7] }}/{{ s.captured_at[2:4] }}
           </span>
           <span style="color:var(--muted); margin-left:8px;">
             {{ s.captured_at[11:16] }}
@@ -68,11 +83,6 @@
           <span class="badge badge-accent">{{ s.total }} impressoras</span>
         </td>
         <td style="color:var(--muted); font-size:11px;">{{ s.filename }}</td>
-        <td>
-          <a href="/fechamento?snapshot={{ s.filename }}" class="btn btn-ghost btn-sm">
-            Usar no fechamento →
-          </a>
-        </td>
       </tr>
       {% endfor %}
     </tbody>
@@ -80,7 +90,7 @@
   {% else %}
   <div class="empty-state">
     <div class="empty-state-icon">📭</div>
-    <div class="empty-state-text">Nenhum snapshot encontrado.<br>Clique em <strong>Coletar Agora</strong> para iniciar.</div>
+    <div class="empty-state-text">Nenhum snapshot encontrado.<br>Aguarde o auto-fechamento ou colete manualmente.</div>
   </div>
   {% endif %}
 </div>
@@ -88,17 +98,30 @@
 
 {% block scripts %}
 <script>
-async function coletar() {
-  showLoading('Coletando dados da API Printwayy...\nIsso pode levar alguns minutos.');
+async function fechar(dia) {
+  const confirmado = confirm(
+    `Fechamento Dia ${dia}\n\n` +
+    `Isso irá:\n` +
+    `  1. Coletar dados atuais da API Printwayy\n` +
+    `  2. Gerar os PDFs de todas as impressoras com Observation = "${dia}"\n\n` +
+    `⚠️ PDFs existentes na pasta do Dia ${dia} serão sobrescritos.\n\n` +
+    `Deseja continuar?`
+  );
+  if (!confirmado) return;
+
+  showLoading(`Coletando dados e gerando PDFs — Dia ${dia}...\nIsso pode levar alguns minutos.`);
   try {
-    const res = await fetch('/api/coletar', { method: 'POST' });
+    const res  = await fetch(`/api/fechamento/executar/${dia}`, { method: 'POST' });
     const data = await res.json();
     hideLoading();
     if (data.ok) {
-      showToast('Coleta concluída com sucesso!', 'success');
-      setTimeout(() => location.reload(), 1500);
+      showToast(
+        `Dia ${dia}: ${data.total} PDF(s) gerado(s) em ${data.pasta}`,
+        'success', 8000
+      );
+      setTimeout(() => location.reload(), 2000);
     } else {
-      showToast('Erro na coleta: ' + data.erro, 'error', 8000);
+      showToast('Erro: ' + (data.erro || 'Falha desconhecida.'), 'error', 8000);
     }
   } catch(e) {
     hideLoading();

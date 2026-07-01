@@ -129,7 +129,7 @@
     {
       "printer_id": "d59efd5e-e086-4b9c-add4-8c1dcb242293",
       "serial": "VNBKLC2CZH",
-      "cliente": "",
+      "cliente": "WILLIAN PEDRO RODRIGUES 30932905897 - BELA VISTA",
       "modelo": "HP Color LaserJet M477fnw",
       "patrimonio": "387",
       "dia_fechamento": null,
@@ -435,7 +435,7 @@
     {
       "printer_id": "321b6583-a900-47bb-9294-40bfe97bf4b0",
       "serial": "U63264G4N807548",
-      "cliente": "E DE CASA SUPERMERCADOS LTDA ARIRIU",
+      "cliente": "",
       "modelo": "Brother DCP-8157DN",
       "patrimonio": "41",
       "dia_fechamento": null,
@@ -831,7 +831,7 @@
     {
       "printer_id": "ced801a4-fa12-408e-b4d5-da169dd06f72",
       "serial": "ZDDPB07M515VS3V",
-      "cliente": "TRK SERVICOS E COMERCIO LTDA",
+      "cliente": "",
       "modelo": "Samsung SL-M4070FR",
       "patrimonio": "391",
       "dia_fechamento": null,
@@ -995,7 +995,7 @@
       "serial": "CNB7FDN7XP",
       "cliente": "",
       "modelo": "HP LaserJet M521dn",
-      "patrimonio": "None",
+      "patrimonio": null,
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1011,7 +1011,7 @@
     {
       "printer_id": "4ec58d46-d5fa-45ed-a50e-98e8f9b0ba71",
       "serial": "ZDDPBQAHB001F6T",
-      "cliente": "AUTO FACIL DESPACHANTE LTDA - ME",
+      "cliente": "AUTO FACIL DESPACHANTE LTDA - ME (MUNDO CAR)",
       "modelo": "Samsung SL-M4070FR",
       "patrimonio": "259",
       "dia_fechamento": null,
@@ -1382,7 +1382,7 @@
       "serial": "BRFSG2R016",
       "cliente": "JOTA S EMPREENDIMENTOS IMOBILIARIOS LTDA",
       "modelo": "HP LaserJet M1536dnf",
-      "patrimonio": "None",
+      "patrimonio": "114",
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1391,7 +1391,7 @@
       "serial": "U63269J2N240358",
       "cliente": "JOTA S EMPREENDIMENTOS IMOBILIARIOS LTDA",
       "modelo": "Brother MFC-8952DW",
-      "patrimonio": "None",
+      "patrimonio": "76",
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1452,7 +1452,7 @@
     {
       "printer_id": "a71ffcc9-1be0-428d-89be-51e48d9e6840",
       "serial": "XBBW001558",
-      "cliente": "ADSERVI SÃO JOSÉ",
+      "cliente": "",
       "modelo": "EPSON L5590",
       "patrimonio": "482",
       "dia_fechamento": null,
@@ -1499,7 +1499,7 @@
       "serial": "BRBS8471M2",
       "cliente": "",
       "modelo": "HP LaserJet P1005",
-      "patrimonio": "None",
+      "patrimonio": null,
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1616,7 +1616,7 @@
       "serial": "X8G6073034F",
       "cliente": "COLEGIO CAMINHO FELIZ LTDA. - ME",
       "modelo": "EPSON L6270",
-      "patrimonio": "None",
+      "patrimonio": "720",
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1715,7 +1715,7 @@
       "serial": "ZDDPB07M515VP6X",
       "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
       "modelo": "Samsung SL-M4070FR",
-      "patrimonio": "None",
+      "patrimonio": "413",
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1724,7 +1724,7 @@
       "serial": "ZDDPB07M515Q71M",
       "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
       "modelo": "Samsung SL-M4070FR",
-      "patrimonio": "None",
+      "patrimonio": "393",
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1733,7 +1733,7 @@
       "serial": "ZDDPB07K612SJGY",
       "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
       "modelo": "Samsung SL-M4070FR",
-      "patrimonio": "None",
+      "patrimonio": "353",
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1742,7 +1742,7 @@
       "serial": "ZDDPB07M515VRZJ",
       "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
       "modelo": "Samsung SL-M4070FR",
-      "patrimonio": "None",
+      "patrimonio": "412",
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1751,7 +1751,7 @@
       "serial": "ZDDPB07K9145NKY",
       "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
       "modelo": "Samsung SL-M4070FR",
-      "patrimonio": "None",
+      "patrimonio": null,
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1760,7 +1760,7 @@
       "serial": "BRBSN913FW",
       "cliente": "TIAGO PEREIRA DOS SANTOS 06454059901",
       "modelo": "HP Laser 432fdn",
-      "patrimonio": "None",
+      "patrimonio": "724",
       "dia_fechamento": null,
       "ativo": true
     },
@@ -1769,7 +1769,133 @@
       "serial": "ZDDPB07K612SKTY",
       "cliente": "COLEGIO CAMINHO FELIZ LTDA. - ME",
       "modelo": "Samsung SL-M4070FR",
-      "patrimonio": "None",
+      "patrimonio": "347",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "af9e9911-ad99-4bd7-8c39-737f92cdee88",
+      "serial": "BRBST8F08Q",
+      "cliente": "TRK SERVICOS E COMERCIO LTDA",
+      "modelo": "HP Laser 432fdn",
+      "patrimonio": "728",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d833ab6b-c600-459c-80f8-c8d4f05fb329",
+      "serial": "088WB07K612X1FN",
+      "cliente": "APUFSC - SINDICAL SINDICATO DOS PROFESSORES DAS UNIVERSIDADES FEDERAIS DE SANTA CATARINA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8dd921b9-e5e5-4504-9a54-b3b28bc1d6d3",
+      "serial": "088WB07M816W88L",
+      "cliente": "APUFSC - SINDICAL SINDICATO DOS PROFESSORES DAS UNIVERSIDADES FEDERAIS DE SANTA CATARINA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "01444b63-6674-48be-bbfd-56a91aaecf9b",
+      "serial": "ZDDPB07M515VPCX",
+      "cliente": "C. D'AVILA CORRETORA DE SEGUROS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "92762e66-028c-45fa-92cd-d711c667e0c8",
+      "serial": "U63267M2N318389",
+      "cliente": "RESIDENCIAL GERIATRICO VOVO LYDIA LTDA",
+      "modelo": "Brother MFC-8912DW",
+      "patrimonio": "57",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8b36a66f-5dfc-4588-8506-2c6a76de3a6a",
+      "serial": "BRBSL4DN05",
+      "cliente": "ROSIMEIRE DA SILVA MEIRA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "334",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "047c4fa6-f2bd-45f8-a935-2e8104f46de6",
+      "serial": "ZDDPBQAJ800121L",
+      "cliente": "JM CONTADORES ASSOCIADOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "286",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "c95c10f7-7ab8-49eb-a3a0-276dc573782c",
+      "serial": "BRBSJ3F78X",
+      "cliente": "FLAVIO FEIJO SOCIEDADE INDIVIDUAL DE ADVOCACIA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "183",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "0fabf22b-7624-4ac0-b024-674cd6b420f1",
+      "serial": "ZDDPB07J91042LR",
+      "cliente": "ASSOCIACAO ATLETICA BANCO DO BRASIL",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "294",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a4bc93fd-3c2b-4924-80f3-bc748651667e",
+      "serial": "U62712L4N266943",
+      "cliente": "ASSOCIACAO ATLETICA BANCO DO BRASIL - Ginasio",
+      "modelo": "Brother DCP-7065DN",
+      "patrimonio": "84",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a9ade647-dfd3-48ed-843b-957b890ae1f1",
+      "serial": "088WB07K91405YN",
+      "cliente": "DESPACHANTE MARCELINO LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "366",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "5e19145c-f809-4c2b-8b81-0a1181581671",
+      "serial": "35C50881",
+      "cliente": "BEBIDAS LEONARDO SELL LTDA",
+      "modelo": "Canon iR1643i II",
+      "patrimonio": "711",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "e4bad203-cb34-4f1d-b7b3-f0c432e8dd5e",
+      "serial": "088WB07M816Q6GT",
+      "cliente": "CAIXA ASSISTENCIAL E BENEFICENTE DOS FUNCIONARIOS DA ACARESC",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "3c3861c0-f89e-40fa-bb68-4e300cf9144d",
+      "serial": "X4FH005828",
+      "cliente": "SOUZA SERVICOS DE LIMPEZA LTDA",
+      "modelo": "EPSON L396",
+      "patrimonio": "354",
       "dia_fechamento": null,
       "ativo": true
     }

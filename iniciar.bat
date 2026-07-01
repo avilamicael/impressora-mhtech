@@ -13,8 +13,7 @@ echo.
 echo  Sistema de Gerenciamento
 echo.
 
-
-:: Verifica Python
+:: Verifica se o Python esta disponivel (necessario apenas na primeira vez)
 python --version >nul 2>&1
 if errorlevel 1 (
   echo  [ERRO] Python nao encontrado. Instale o Python 3.10+.
@@ -22,9 +21,20 @@ if errorlevel 1 (
   exit /b
 )
 
-:: Instala dependencias se necessario
+:: Cria o ambiente virtual se ainda nao existir
+if not exist "venv\Scripts\python.exe" (
+  echo  Criando ambiente virtual...
+  python -m venv venv
+  if errorlevel 1 (
+    echo  [ERRO] Falha ao criar ambiente virtual.
+    pause
+    exit /b
+  )
+)
+
+:: Instala/atualiza dependencias via requirements.txt
 echo  Verificando dependencias...
-pip install flask xhtml2pdf requests urllib3 -q --disable-pip-version-check
+venv\Scripts\pip install -r requirements.txt -q --disable-pip-version-check
 
 echo  Iniciando servidor...
 echo  Acesse: http://localhost:5000
@@ -34,7 +44,7 @@ echo.
 timeout /t 2 /nobreak >nul
 start "" http://localhost:5000
 
-:: Inicia o servidor
-python app.py
+:: Inicia o servidor usando o Python do venv
+venv\Scripts\python.exe app.py
 
 pause

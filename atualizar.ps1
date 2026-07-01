@@ -1,0 +1,128 @@
+# ============================================================================
+#  MH Tech - Atualizador automatico
+#  Verifica a ultima versao no GitHub, baixa, aplica preservando os dados
+#  do cliente (config.json, snapshots, faturamento, logs) e reinicia o app.
+#
+#  NAO execute este .ps1 direto: use "atualizar.bat" (duplo-clique).
+# ============================================================================
+
+$ErrorActionPreference = 'Stop'
+$ProgressPreference    = 'SilentlyContinue'
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+$Repo    = 'avilamicael/impressora-mhtech'
+# Pasta da instalacao: via variavel (quando baixado e executado pelo .bat),
+# senao a pasta do proprio script, senao o diretorio atual.
+if ($env:MHT_ROOT)      { $Root = $env:MHT_ROOT.TrimEnd('\') }
+elseif ($PSScriptRoot)  { $Root = $PSScriptRoot }
+else                    { $Root = (Get-Location).Path }
+$Headers = @{ 'User-Agent' = 'mh-tech-updater' }
+
+# Arquivos/pastas do cliente que NUNCA devem ser sobrescritos
+$ExcludeFiles = @('config.json')
+$ExcludeDirs  = @('venv', 'snapshots', 'faturamento', '__pycache__', '.git')
+
+function Step($m) { Write-Host "  $m" }
+
+Write-Host ''
+Write-Host '  MH Tech - Verificacao de atualizacao'
+Write-Host '  ===================================='
+
+try {
+    # ---- 1) Versao instalada localmente ------------------------------------
+    $verFile = Join-Path $Root 'version.txt'
+    if (Test-Path $verFile) { $local = (Get-Content $verFile -Raw).Trim() } else { $local = '0.0.0' }
+    $localNorm = $local.TrimStart('v', 'V')
+    Step "Versao instalada     : $localNorm"
+
+    # ---- 2) Ultima versao no GitHub (Release; senao a maior tag) ------------
+    $remoteTag = $null
+    try {
+        $rel = Invoke-RestMethod "https://api.github.com/repos/$Repo/releases/latest" -Headers $Headers -TimeoutSec 30
+        $remoteTag = $rel.tag_name
+    } catch {
+        try {
+            $tags = Invoke-RestMethod "https://api.github.com/repos/$Repo/tags" -Headers $Headers -TimeoutSec 30
+            if ($tags -and @($tags).Count -gt 0) {
+                $remoteTag = (@($tags) | Sort-Object {
+                    try { [version]($_.name.TrimStart('v','V')) } catch { [version]'0.0.0' }
+                } -Descending | Select-Object -First 1).name
+            }
+        } catch { }
+    }
+
+    if (-not $remoteTag) {
+        Write-Host ''
+        Write-Host '  Nenhuma versao publicada no GitHub ainda. Nada a fazer.' -ForegroundColor Yellow
+        exit 0
+    }
+    $remoteNorm = $remoteTag.TrimStart('v', 'V')
+    Step "Ultima versao GitHub : $remoteNorm"
+
+    # ---- 3) Precisa atualizar? --------------------------------------------
+    $needUpdate = $false
+    try { $needUpdate = [version]$remoteNorm -gt [version]$localNorm }
+    catch { $needUpdate = ($remoteNorm -ne $localNorm) }
+
+    if (-not $needUpdate) {
+        Write-Host ''
+        Write-Host "  O sistema ja esta na versao mais recente (v$localNorm)." -ForegroundColor Green
+        exit 0
+    }
+
+    Write-Host ''
+    Write-Host "  Nova versao disponivel: v$remoteNorm  (instalada: v$localNorm)" -ForegroundColor Cyan
+    Write-Host ''
+
+    # ---- 4) Baixa e extrai o pacote ---------------------------------------
+    $tmp = Join-Path $env:TEMP ('mhtech_update_' + [Guid]::NewGuid().ToString('N'))
+    New-Item -ItemType Directory -Path $tmp -Force | Out-Null
+    $zip = Join-Path $tmp 'release.zip'
+    $zipUrl = "https://github.com/$Repo/archive/refs/tags/$remoteTag.zip"
+
+    Step "Baixando pacote ($remoteTag)..."
+    Invoke-WebRequest $zipUrl -OutFile $zip -Headers $Headers -TimeoutSec 180
+
+    Step 'Extraindo...'
+    Expand-Archive -Path $zip -DestinationPath $tmp -Force
+    $src = Get-ChildItem -Path $tmp -Directory | Select-Object -First 1
+    if (-not $src) { throw 'Falha ao extrair o pacote baixado.' }
+
+    # ---- 5) Encerra o app em execucao -------------------------------------
+    Step 'Encerrando o app atual...'
+    taskkill /f /im pythonw.exe 2>$null | Out-Null
+    Start-Sleep -Seconds 2
+
+    # ---- 6) Aplica os arquivos (preservando dados do cliente) -------------
+    Step 'Aplicando atualizacao...'
+    $rcArgs = @($src.FullName, $Root, '/E', '/XF') + $ExcludeFiles + @('/XD') + $ExcludeDirs + @('/NFL','/NDL','/NJH','/NJS','/NP','/R:2','/W:2')
+    & robocopy @rcArgs | Out-Null
+    if ($LASTEXITCODE -ge 8) { throw "Falha ao copiar arquivos (robocopy codigo $LASTEXITCODE)." }
+
+    # ---- 7) Atualiza dependencias (rapido se nada mudou) ------------------
+    Step 'Verificando dependencias...'
+    $pip = Join-Path $Root 'venv\Scripts\pip.exe'
+    & $pip install -r (Join-Path $Root 'requirements.txt') -q --disable-pip-version-check
+
+    # ---- 8) Reinicia o app em segundo plano -------------------------------
+    Step 'Reiniciando o app...'
+    $pyw = Join-Path $Root 'venv\Scripts\pythonw.exe'
+    Start-Process -FilePath $pyw -ArgumentList (Join-Path $Root 'app.py') -WorkingDirectory $Root
+
+    # ---- 9) Limpeza --------------------------------------------------------
+    Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue
+
+    Write-Host ''
+    Write-Host "  Atualizado com sucesso para a versao v$remoteNorm!" -ForegroundColor Green
+    Write-Host '  Acesse: http://localhost:5000'
+    Write-Host ''
+}
+catch {
+    Write-Host ''
+    Write-Host '  ERRO durante a atualizacao:' -ForegroundColor Red
+    Write-Host "  $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host ''
+    Write-Host '  O app pode ter sido encerrado. Tente rodar "start.bat" para reinicia-lo,'
+    Write-Host '  ou execute "atualizar.bat" novamente.'
+    exit 1
+}

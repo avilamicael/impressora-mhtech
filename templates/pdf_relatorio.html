@@ -7,226 +7,86 @@
 
   body {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 8.5pt;
-    color: #0f1623;
+    font-size: 9pt;
+    color: #1e293b;
     background: #fff;
     line-height: 1.4;
   }
 
   /* ── TOP STRIPE ── */
-  .stripe-dark {
-    background-color: #0f1623;
-    height: 10px;
-    margin-bottom: 0;
-  }
-  .stripe-blue {
-    background-color: #2563eb;
-    height: 3px;
-    margin-bottom: 20px;
-  }
+  .stripe-dark { background-color: #0f172a; height: 8px; }
+  .stripe-blue { background-color: #2563eb; height: 3px; margin-bottom: 16px; }
 
   /* ── HEADER ── */
-  .header-wrap { margin-bottom: 20px; }
   .header-outer { width: 100%; border-collapse: collapse; }
   .header-outer td { vertical-align: top; padding: 0; }
-  .header-title {
-    font-size: 19pt;
-    font-weight: bold;
-    color: #0f1623;
-    letter-spacing: -0.5px;
-    line-height: 1.1;
-  }
-  .header-sub {
-    font-size: 7.5pt;
-    color: #64748b;
-    margin-top: 4px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
+  .header-title { font-size: 20pt; font-weight: bold; color: #0f172a; letter-spacing: -0.6px; line-height: 1.08; }
+  .header-sub { font-size: 7.5pt; color: #64748b; margin-top: 5px; letter-spacing: 1.4px; text-transform: uppercase; }
   .header-meta { text-align: right; }
-  .meta-date {
-    font-size: 13pt;
-    font-weight: bold;
-    color: #2563eb;
-    line-height: 1.1;
-  }
-  .meta-serial {
-    display: inline-block;
-    background-color: #0f1623;
-    color: #fff;
-    font-size: 7.5pt;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 3px 10px;
-    margin-top: 5px;
-  }
-  .meta-coleta {
-    font-size: 7.5pt;
-    color: #64748b;
-    margin-top: 3px;
-  }
+  .meta-date { font-size: 14pt; font-weight: bold; color: #2563eb; line-height: 1.1; }
+  .meta-coleta { font-size: 7.5pt; color: #94a3b8; margin-top: 3px; }
+  .meta-serial { display: inline-block; background-color: #0f172a; color: #fff; font-size: 7.5pt; font-weight: bold; letter-spacing: 1px; padding: 3px 11px; margin-top: 6px; }
 
-  /* ── DIVIDER ── */
-  .divider {
-    border: none;
-    border-top: 1px solid #e2e8f0;
-    margin: 14px 0;
-  }
-  .divider-strong {
-    border: none;
-    border-top: 2px solid #0f1623;
-    margin: 0 0 16px 0;
-  }
+  .divider-strong { border: none; border-top: 2px solid #0f172a; margin: 10px 0 2px 0; }
 
   /* ── SECTION HEADER ── */
-  .section-head {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 8px;
-    margin-top: 16px;
-  }
-  .section-head td { padding: 0; vertical-align: middle; }
-  .section-dot {
-    width: 6px;
-    height: 6px;
-    background-color: #2563eb;
-    display: inline-block;
-    margin-right: 6px;
-  }
-  .section-label {
-    font-size: 7pt;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #2563eb;
-  }
-  .section-line {
-    border-top: 1px solid #e2e8f0;
-    vertical-align: middle;
-    padding-left: 10px;
+  .section-head { width: 100%; border-collapse: collapse; margin: 11px 0 5px 0; }
+  .section-head td {
+    background-color: #eef2ff;
+    border-left: 3px solid #2563eb;
+    padding: 4px 12px;
+    font-size: 8pt; font-weight: bold; letter-spacing: 1.6px;
+    text-transform: uppercase; color: #1e3a8a;
   }
 
-  /* ── INFO GRID (4-col) ── */
-  .info-grid { width: 100%; border-collapse: collapse; }
-  .info-grid tr { border-bottom: 1px solid #f1f5f9; }
-  .info-grid td { padding: 5px 8px; font-size: 8pt; vertical-align: top; }
-  .ig-lbl {
-    color: #94a3b8;
-    text-transform: uppercase;
-    font-size: 6.5pt;
-    letter-spacing: 0.8px;
-    font-weight: bold;
-    width: 22%;
-    white-space: nowrap;
+  /* ── GRID DE CARDS (dados) ── */
+  .grid { width: 100%; border-collapse: collapse; }
+  .grid td {
+    border: 1px solid #e8edf3;
+    padding: 4.5px 10px;
+    vertical-align: top;
+    background-color: #ffffff;
   }
-  .ig-val {
-    color: #0f1623;
-    font-weight: bold;
-    font-size: 8pt;
-    width: 28%;
-  }
-  .ig-lbl2 {
-    color: #94a3b8;
-    text-transform: uppercase;
-    font-size: 6.5pt;
-    letter-spacing: 0.8px;
-    font-weight: bold;
-    width: 22%;
-    white-space: nowrap;
-    padding-left: 16px;
-    border-left: 1px solid #f1f5f9;
-  }
-  .ig-val2 {
-    color: #0f1623;
-    font-weight: bold;
-    font-size: 8pt;
-    width: 28%;
-  }
+  .card-lbl { color: #94a3b8; font-size: 6.3pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.7px; }
+  .card-val { color: #0f172a; font-size: 9pt; font-weight: bold; padding-top: 1px; }
 
-  /* ── COUNTER TABLE ── */
-  .ctr-table { width: 100%; border-collapse: collapse; }
-  .ctr-table colgroup col.c1 { width: 55%; }
-  .ctr-table colgroup col.c2 { width: 25%; }
-  .ctr-table colgroup col.c3 { width: 20%; }
-  .ctr-table thead tr {
-    background-color: #0f1623;
-  }
-  .ctr-table thead th {
-    color: #94a3b8;
-    font-size: 6.5pt;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  /* ── STAT CARDS (contadores) ── */
+  .stat { width: 100%; border-collapse: collapse; }
+  .stat td {
+    border: 1px solid #e2e8f0;
     padding: 7px 12px;
-    text-align: left;
+    vertical-align: top;
+    background-color: #f8fafc;
   }
-  .ctr-table thead th.r { text-align: right; }
-  .ctr-table tbody tr { border-bottom: 1px solid #f1f5f9; }
-  .ctr-table tbody tr:nth-child(even) { background-color: #f8fafc; }
-  .ctr-table tbody td { padding: 8px 12px; font-size: 8.5pt; color: #334155; }
-  .ctr-table tbody td.r { text-align: right; }
-  .ctr-table tbody td.num { font-weight: bold; color: #0f1623; text-align: right; font-size: 9.5pt; }
-  .ctr-table tbody td.dt  { color: #94a3b8; font-size: 7pt; text-align: right; }
-  .ctr-table tfoot tr { background-color: #2563eb; }
-  .ctr-table tfoot td {
-    padding: 9px 12px;
-    font-size: 9pt;
-    font-weight: bold;
-    color: #fff;
-  }
-  .ctr-table tfoot td.r { text-align: right; font-size: 11pt; letter-spacing: -0.3px; }
+  .stat-lbl { color: #64748b; font-size: 6.6pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-num { color: #0f172a; font-size: 15pt; font-weight: bold; letter-spacing: -0.6px; padding-top: 2px; }
+  .stat-dt  { color: #94a3b8; font-size: 6.3pt; padding-top: 1px; }
+  .stat-total { background-color: #0f172a; border-color: #0f172a; }
 
-  /* ── SUPPLIES TABLE ── */
-  .sup-table { width: 100%; border-collapse: collapse; }
-  .sup-table colgroup col.s1 { width: 34%; }
-  .sup-table colgroup col.s2 { width: 16%; }
-  .sup-table colgroup col.s3 { width: 10%; }
-  .sup-table colgroup col.s4 { width: 12%; }
-  .sup-table colgroup col.s5 { width: 28%; }
-  .sup-table thead tr { background-color: #0f1623; }
-  .sup-table thead th {
-    color: #94a3b8;
-    font-size: 6.5pt;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 7px 10px;
-    text-align: left;
+  /* ── SUPRIMENTOS ── */
+  .tbl { width: 100%; border-collapse: collapse; }
+  .tbl td { padding: 3px 12px; font-size: 8.5pt; color: #334155; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+  .tbl .thead-row td {
+    background-color: #f1f5f9; color: #64748b; font-size: 6.8pt; font-weight: bold;
+    letter-spacing: 1.3px; text-transform: uppercase; border-bottom: 1px solid #e2e8f0;
   }
-  .sup-table thead th.r { text-align: right; }
-  .sup-table tbody tr { border-bottom: 1px solid #f1f5f9; }
-  .sup-table tbody tr:nth-child(even) { background-color: #f8fafc; }
-  .sup-table tbody td { padding: 7px 10px; font-size: 8pt; color: #334155; vertical-align: middle; }
-  .sup-table tbody td.r { text-align: right; }
-
-  /* Level pill */
-  .pill {
-    font-size: 7pt;
-    font-weight: bold;
-    padding: 2px 8px;
-    letter-spacing: 0.5px;
-  }
-  .pill-ok   { background-color: #dcfce7; color: #15803d; }
-  .pill-warn { background-color: #fef9c3; color: #92400e; }
-  .pill-low  { background-color: #fee2e2; color: #b91c1c; }
-  .pill-empty{ background-color: #f1f5f9; color: #64748b; }
-
-  /* Progress bar via table trick */
-  .bar-outer { width: 80px; height: 7px; background-color: #e2e8f0; display: inline-block; vertical-align: middle; }
-  .bar-inner-ok   { height: 7px; background-color: #22c55e; display: inline-block; }
-  .bar-inner-warn { height: 7px; background-color: #f59e0b; display: inline-block; }
-  .bar-inner-low  { height: 7px; background-color: #ef4444; display: inline-block; }
+  .tbl td.r { text-align: right; }
+  .sup-name { font-weight: bold; color: #0f172a; }
+  .sup-sub  { color: #64748b; font-size: 8pt; }
+  .bar-track { width: 118px; border-collapse: collapse; background-color: #e5e7eb; }
+  .bar-track td { padding: 0; line-height: 9px; font-size: 6px; border: none; }
+  .bar-ok   { background-color: #16a34a; }
+  .bar-warn { background-color: #f59e0b; }
+  .bar-low  { background-color: #dc2626; }
+  .bar-empty{ background-color: #cbd5e1; }
+  .pct-lbl { font-weight: bold; font-size: 9pt; color: #0f172a; text-align: right; }
 
   /* ── FOOTER ── */
-  .footer-wrap {
-    margin-top: 24px;
-    border-top: 1px solid #e2e8f0;
-    padding-top: 10px;
-  }
+  .footer-wrap { margin-top: 9px; border-top: 1px solid #e2e8f0; padding-top: 6px; }
   .footer-table { width: 100%; border-collapse: collapse; }
   .footer-table td { font-size: 7pt; color: #94a3b8; vertical-align: middle; }
   .footer-table td.r { text-align: right; }
-  .footer-brand { font-weight: bold; color: #0f1623; font-size: 7.5pt; }
+  .footer-brand { font-weight: bold; color: #0f172a; font-size: 7.5pt; }
 
   @page { size: A4; margin: 0.8cm 1.4cm 1.2cm 1.4cm; }
 </style>
@@ -237,13 +97,37 @@
 {% set loc  = printer.location or {} %}
 {% set addr = loc.address or {} %}
 
-{% set bw    = namespace(v=0, dt='') %}
-{% set color = namespace(v=0, dt='') %}
-{% set scan  = namespace(v=0, dt='') %}
+{% set LABELS = {
+  'blackAndWhite': 'Impressao P&B',
+  'color': 'Impressao Colorida',
+  'a3BlackAndWhite': 'A3 P&B',
+  'a3Color': 'A3 Colorida',
+  'scan': 'Digitalizacao',
+  'colorLevel1Coverage': 'Cobertura Nivel 1',
+  'colorLevel2Coverage': 'Cobertura Nivel 2',
+  'colorLevel3Coverage': 'Cobertura Nivel 3'
+} %}
+{% set PRINT_TYPES = ['blackAndWhite', 'color', 'a3BlackAndWhite', 'a3Color'] %}
+{% set MAX_SUP = 9 %}
+
+{# soma total de impressao e coleta os contadores presentes #}
+{% set ns = namespace(total=0, dt='') %}
+{% set counters = [] %}
 {% for c in printer.counters %}
-  {% if c.type == 'blackAndWhite' %}{% set bw.v    = c.totalCount %}{% set bw.dt    = c.dateOfCapture %}{% endif %}
-  {% if c.type == 'color'         %}{% set color.v = c.totalCount %}{% set color.dt = c.dateOfCapture %}{% endif %}
-  {% if c.type == 'scanner'       %}{% set scan.v  = c.totalCount %}{% set scan.dt  = c.dateOfCapture %}{% endif %}
+  {% if c.type in PRINT_TYPES %}{% set ns.total = ns.total + c.totalCount %}{% endif %}
+  {% if c.dateOfCapture and not ns.dt %}{% set ns.dt = c.dateOfCapture %}{% endif %}
+{% endfor %}
+
+{# monta lista de cards: Total Geral primeiro (destaque), depois cada contador #}
+{% set cards = [] %}
+{% set _ = cards.append({'lbl': 'Total Geral', 'num': ns.total, 'dt': ns.dt, 'total': true}) %}
+{% for key in PRINT_TYPES %}
+  {% for c in printer.counters if c.type == key %}
+    {% set _ = cards.append({'lbl': LABELS.get(c.type, c.type), 'num': c.totalCount, 'dt': c.dateOfCapture, 'total': false}) %}
+  {% endfor %}
+{% endfor %}
+{% for c in printer.counters if c.type not in PRINT_TYPES %}
+  {% set _ = cards.append({'lbl': LABELS.get(c.type, c.type), 'num': c.totalCount, 'dt': c.dateOfCapture, 'total': false}) %}
 {% endfor %}
 
 <!-- STRIPES -->
@@ -253,13 +137,13 @@
 <!-- HEADER -->
 <table class="header-outer">
   <tr>
-    <td style="width:65%;">
+    <td style="width:62%;">
       <div class="header-title">Relatorio de<br/>Impressora</div>
       <div class="header-sub">MH Tech Solucoes em TI &nbsp;&bull;&nbsp; Fechamento Dia {{ dia }}</div>
     </td>
-    <td style="width:35%;" class="header-meta">
+    <td style="width:38%;" class="header-meta">
       <div class="meta-date">{{ captured_at[8:10] }}/{{ captured_at[5:7] }}/{{ captured_at[:4] }}</div>
-      <div class="meta-coleta">Coleta: {{ captured_at[11:16] }}</div>
+      <div class="meta-coleta">Coleta {{ captured_at[11:16] }}</div>
       <div><span class="meta-serial">{{ printer.serialNumber or '-' }}</span></div>
     </td>
   </tr>
@@ -267,176 +151,139 @@
 
 <hr class="divider-strong"/>
 
-<!-- ── DADOS DA IMPRESSORA ── -->
-<table class="section-head">
-  <tr>
-    <td style="width:1%;"><div class="section-dot"></div></td>
-    <td style="width:30%;"><span class="section-label">Dados da Impressora</span></td>
-    <td class="section-line"></td>
-  </tr>
-</table>
+<!-- ── DADOS DA IMPRESSORA (grid de cards 3 col) ── -->
+<table class="section-head"><tr><td>Dados da Impressora</td></tr></table>
 
-<table class="info-grid">
+{% set dados = [
+  {'l':'Fabricante','v': printer.manufacturer or '-'},
+  {'l':'Modelo','v': printer.model or '-'},
+  {'l':'Conexao','v': printer.type | conexao},
+  {'l':'Cor','v': printer.color | cor_impressora},
+  {'l':'Status','v': printer.status | status_impressora},
+  {'l':'Firmware','v': printer.firmwareVersion or '-'},
+  {'l':'IP','v': printer.ipAddress or '-'},
+  {'l':'MAC','v': printer.macAddress or '-'},
+  {'l':'Serial','v': printer.serialNumber or '-'},
+  {'l':'Patrimonio','v': printer.assetNumber or '-'},
+  {'l':'Ponto de instalacao','v': printer.installationPoint or '-'},
+  {'l':'Contrato','v': printer.contractName or '-'},
+  {'l':'Ultima comunicacao','v': (printer.lastCommunication[8:10] ~ '/' ~ printer.lastCommunication[5:7] ~ '/' ~ printer.lastCommunication[:4] ~ ' ' ~ printer.lastCommunication[11:16]) if printer.lastCommunication else '-'},
+  {'l':'Observacao','v': printer.observation or '-'}
+] %}
+{% for row in dados | batch(3) %}
+<table class="grid">
   <tr>
-    <td class="ig-lbl">Fabricante</td>
-    <td class="ig-val">{{ printer.manufacturer or '-' }}</td>
-    <td class="ig-lbl2">Status</td>
-    <td class="ig-val2">{{ printer.status or '-' }}</td>
-  </tr>
-  <tr>
-    <td class="ig-lbl">Modelo</td>
-    <td class="ig-val">{{ printer.model or '-' }}</td>
-    <td class="ig-lbl2">Ultima comunicacao</td>
-    <td class="ig-val2">{% if printer.lastCommunication %}{{ printer.lastCommunication[8:10] }}/{{ printer.lastCommunication[5:7] }}/{{ printer.lastCommunication[:4] }} {{ printer.lastCommunication[11:16] }}{% else %}-{% endif %}</td>
-  </tr>
-  <tr>
-    <td class="ig-lbl">Conexao</td>
-    <td class="ig-val">{{ printer.type or '-' }}</td>
-    <td class="ig-lbl2">Firmware</td>
-    <td class="ig-val2">{{ printer.firmwareVersion or '-' }}</td>
-  </tr>
-  <tr>
-    <td class="ig-lbl">Cor</td>
-    <td class="ig-val">{{ printer.color or '-' }}</td>
-    <td class="ig-lbl2">Ponto instal.</td>
-    <td class="ig-val2">{{ printer.installationPoint or '-' }}</td>
-  </tr>
-  <tr>
-    <td class="ig-lbl">IP</td>
-    <td class="ig-val">{{ printer.ipAddress or '-' }}</td>
-    <td class="ig-lbl2">Contrato</td>
-    <td class="ig-val2">{{ printer.contractName or '-' }}</td>
-  </tr>
-  <tr>
-    <td class="ig-lbl">MAC</td>
-    <td class="ig-val">{{ printer.macAddress or '-' }}</td>
-    <td class="ig-lbl2">Patrimonio</td>
-    <td class="ig-val2">{{ printer.assetNumber or '-' }}</td>
-  </tr>
-  <tr>
-    <td class="ig-lbl">Serial</td>
-    <td class="ig-val">{{ printer.serialNumber or '-' }}</td>
-    <td class="ig-lbl2">Observacao</td>
-    <td class="ig-val2">{{ printer.observation or '-' }}</td>
+    {% for d in row %}
+    <td style="width:33.33%;">
+      <div class="card-lbl">{{ d.l }}</div>
+      <div class="card-val">{{ d.v }}</div>
+    </td>
+    {% endfor %}
   </tr>
 </table>
+{% endfor %}
 
 <!-- ── CLIENTE E LOCALIZACAO ── -->
-<table class="section-head">
+<table class="section-head"><tr><td>Cliente e Localizacao</td></tr></table>
+
+<table class="grid">
   <tr>
-    <td style="width:1%;"><div class="section-dot"></div></td>
-    <td style="width:30%;"><span class="section-label">Cliente e Localizacao</span></td>
-    <td class="section-line"></td>
+    <td style="width:50%;">
+      <div class="card-lbl">Cliente</div>
+      <div class="card-val">{{ (cust.name or '-') | truncate(46, True, '…') }}</div>
+    </td>
+    <td style="width:50%;">
+      <div class="card-lbl">Localizacao</div>
+      <div class="card-val">{{ (addr.name or '-') | truncate(46, True, '…') }}</div>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:50%;">
+      <div class="card-lbl">Endereco</div>
+      <div class="card-val">{{ (addr.street ~ (', ' ~ addr.number if addr.number else '')) | truncate(46, True, '…') if addr.street else '-' }}</div>
+    </td>
+    <td style="width:50%;">
+      <div class="card-lbl">Bairro</div>
+      <div class="card-val">{{ addr.neighborhood or '-' }}</div>
+    </td>
+  </tr>
+</table>
+<table class="grid">
+  <tr>
+    <td style="width:33.33%;">
+      <div class="card-lbl">Cidade / UF</div>
+      <div class="card-val">{{ addr.city or '-' }} / {{ addr.state or '-' }}</div>
+    </td>
+    <td style="width:33.33%;">
+      <div class="card-lbl">CEP</div>
+      <div class="card-val">{{ addr.zipCode or '-' }}</div>
+    </td>
+    <td style="width:33.34%;">
+      <div class="card-lbl">Departamento</div>
+      <div class="card-val">{{ loc.department or '-' }}</div>
+    </td>
   </tr>
 </table>
 
-<table class="info-grid">
-  <tr>
-    <td class="ig-lbl">Cliente</td>
-    <td class="ig-val">{{ cust.name or '-' }}</td>
-    <td class="ig-lbl2">Endereco</td>
-    <td class="ig-val2">{{ addr.street or '-' }}{% if addr.number %}, {{ addr.number }}{% endif %}</td>
-  </tr>
-  <tr>
-    <td class="ig-lbl">Localizacao</td>
-    <td class="ig-val">{{ addr.name or '-' }}</td>
-    <td class="ig-lbl2">Cidade / UF</td>
-    <td class="ig-val2">{{ addr.city or '-' }} / {{ addr.state or '-' }}</td>
-  </tr>
-  <tr>
-    <td class="ig-lbl">Departamento</td>
-    <td class="ig-val">{{ loc.department or '-' }}</td>
-    <td class="ig-lbl2">CEP</td>
-    <td class="ig-val2">{{ addr.zipCode or '-' }}</td>
-  </tr>
-</table>
+<!-- ── CONTADORES (stat cards) ── -->
+<table class="section-head"><tr><td>Contadores</td></tr></table>
 
-<!-- ── CONTADORES ── -->
-<table class="section-head">
+{% for row in cards | batch(4) %}
+<table class="stat">
   <tr>
-    <td style="width:1%;"><div class="section-dot"></div></td>
-    <td style="width:30%;"><span class="section-label">Contadores Totais</span></td>
-    <td class="section-line"></td>
+    {% set w = (100.0 / (row | length)) | round(2) %}
+    {% for c in row %}
+    <td style="width:{{ w }}%;{% if c.total %} background-color:#0f172a; border-color:#0f172a;{% endif %}">
+      <div class="stat-lbl"{% if c.total %} style="color:#93c5fd;"{% endif %}>{{ c.lbl }}</div>
+      <div class="stat-num"{% if c.total %} style="color:#ffffff;"{% endif %}>{{ "{:,}".format(c.num).replace(",",".") }}</div>
+      <div class="stat-dt"{% if c.total %} style="color:#64748b;"{% endif %}>{% if c.dt %}{{ c.dt[8:10] }}/{{ c.dt[5:7] }}/{{ c.dt[:4] }}{% endif %}</div>
+    </td>
+    {% endfor %}
   </tr>
 </table>
-
-<table style="width:100%; border-collapse:collapse;">
-  <!-- Header row -->
-  <tr style="background-color:#0f1623;">
-    <td style="width:55%; padding:7px 12px; font-size:6.5pt; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8;">Tipo</td>
-    <td style="width:25%; padding:7px 12px; font-size:6.5pt; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8; text-align:right;">Total</td>
-    <td style="width:20%; padding:7px 12px; font-size:6.5pt; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8; text-align:right;">Ultima leitura</td>
-  </tr>
-  <!-- Geral -->
-  <tr style="border-bottom:1px solid #f1f5f9;">
-    <td style="width:55%; padding:8px 12px; font-size:8.5pt; color:#334155;">Geral</td>
-    <td style="width:25%; padding:8px 12px; font-size:9.5pt; font-weight:bold; color:#0f1623; text-align:right;">{{ "{:,}".format(bw.v + color.v).replace(",",".") }}</td>
-    <td style="width:20%; padding:8px 12px; font-size:7pt; color:#94a3b8; text-align:right;">{% if bw.dt %}{{ bw.dt[8:10] }}/{{ bw.dt[5:7] }}/{{ bw.dt[:4] }}{% endif %}</td>
-  </tr>
-  <!-- P&B -->
-  <tr style="background-color:#f8fafc; border-bottom:1px solid #f1f5f9;">
-    <td style="width:55%; padding:8px 12px; font-size:8.5pt; color:#334155;">Impressao P&amp;B</td>
-    <td style="width:25%; padding:8px 12px; font-size:9.5pt; font-weight:bold; color:#0f1623; text-align:right;">{{ "{:,}".format(bw.v).replace(",",".") }}</td>
-    <td style="width:20%; padding:8px 12px; font-size:7pt; color:#94a3b8; text-align:right;">{% if bw.dt %}{{ bw.dt[8:10] }}/{{ bw.dt[5:7] }}/{{ bw.dt[:4] }}{% endif %}</td>
-  </tr>
-  {% if color.v > 0 %}
-  <tr style="border-bottom:1px solid #f1f5f9;">
-    <td style="width:55%; padding:8px 12px; font-size:8.5pt; color:#334155;">Impressao Colorida</td>
-    <td style="width:25%; padding:8px 12px; font-size:9.5pt; font-weight:bold; color:#0f1623; text-align:right;">{{ "{:,}".format(color.v).replace(",",".") }}</td>
-    <td style="width:20%; padding:8px 12px; font-size:7pt; color:#94a3b8; text-align:right;">{% if color.dt %}{{ color.dt[8:10] }}/{{ color.dt[5:7] }}/{{ color.dt[:4] }}{% endif %}</td>
-  </tr>
-  {% endif %}
-  {% if scan.v > 0 %}
-  <tr style="background-color:#f8fafc; border-bottom:1px solid #f1f5f9;">
-    <td style="width:55%; padding:8px 12px; font-size:8.5pt; color:#334155;">Digitalizacao</td>
-    <td style="width:25%; padding:8px 12px; font-size:9.5pt; font-weight:bold; color:#0f1623; text-align:right;">{{ "{:,}".format(scan.v).replace(",",".") }}</td>
-    <td style="width:20%; padding:8px 12px; font-size:7pt; color:#94a3b8; text-align:right;">{% if scan.dt %}{{ scan.dt[8:10] }}/{{ scan.dt[5:7] }}/{{ scan.dt[:4] }}{% endif %}</td>
-  </tr>
-  {% endif %}
-  <!-- Total row -->
-  <tr style="background-color:#2563eb;">
-    <td style="width:55%; padding:9px 12px; font-size:9pt; font-weight:bold; color:#fff;">TOTAL GERAL</td>
-    <td style="width:25%; padding:9px 12px; font-size:11pt; font-weight:bold; color:#fff; text-align:right; letter-spacing:-0.3px;">{{ "{:,}".format(bw.v + color.v).replace(",",".") }}</td>
-    <td style="width:20%; padding:9px 12px;"></td>
-  </tr>
-</table>
+{% endfor %}
 
 <!-- ── SUPRIMENTOS ── -->
 {% if printer.supplies %}
-<table class="section-head">
-  <tr>
-    <td style="width:1%;"><div class="section-dot"></div></td>
-    <td style="width:30%;"><span class="section-label">Suprimentos e Pecas</span></td>
-    <td class="section-line"></td>
-  </tr>
-</table>
+<table class="section-head"><tr><td>Suprimentos e Pecas</td></tr></table>
 
-<table style="width:100%; border-collapse:collapse;">
-  <tr style="background-color:#0f1623;">
-    <td style="width:34%; padding:7px 10px; font-size:6.5pt; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8;">Descricao</td>
-    <td style="width:16%; padding:7px 10px; font-size:6.5pt; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8;">Tipo</td>
-    <td style="width:10%; padding:7px 10px; font-size:6.5pt; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8;">Cor</td>
-    <td style="width:10%; padding:7px 10px; font-size:6.5pt; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8;">Nivel</td>
-    <td style="width:30%; padding:7px 10px; font-size:6.5pt; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#94a3b8;">Detalhe</td>
+<table class="tbl">
+  <tr class="thead-row">
+    <td style="width:38%;">Descricao</td>
+    <td style="width:16%;">Tipo</td>
+    <td style="width:12%;">Cor</td>
+    <td style="width:26%;">Nivel informado</td>
+    <td class="r" style="width:8%;">%</td>
   </tr>
-  <tbody>
-    {% for s in printer.supplies %}
-    {% set pct = s.level.percentageValue | int %}
-    {% if pct >= 50 %}{% set cls = 'ok' %}
-    {% elif pct >= 20 %}{% set cls = 'warn' %}
-    {% elif pct > 0 %}{% set cls = 'low' %}
-    {% else %}{% set cls = 'empty' %}{% endif %}
-    <tr style="border-bottom:1px solid #f1f5f9;">
-      <td style="width:34%; padding:7px 10px; font-size:8pt; color:#0f1623;">{{ s.description }}</td>
-      <td style="width:16%; padding:7px 10px; font-size:8pt; color:#64748b;">{{ s.type }}</td>
-      <td style="width:10%; padding:7px 10px; font-size:8pt; color:#64748b;">{{ s.color }}</td>
-      <td style="width:10%; padding:7px 10px;">
-        <span class="pill pill-{{ cls }}">{{ pct }}%</span>
-      </td>
-      <td style="width:30%; padding:7px 10px; font-size:7.5pt; color:#64748b;">{{ s.level.description }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
+  {% for s in printer.supplies[:MAX_SUP] %}
+  {% set pct = s.level.percentageValue | int %}
+  {% if pct >= 50 %}{% set cls = 'ok' %}
+  {% elif pct >= 20 %}{% set cls = 'warn' %}
+  {% elif pct > 0 %}{% set cls = 'low' %}
+  {% else %}{% set cls = 'empty' %}{% endif %}
+  {% set fill = [ [ (1.18 * pct) | round | int, 117 ] | min, 1 ] | max %}
+  <tr>
+    <td class="sup-name" style="width:38%;">{{ s.description | suprimento | truncate(42, True, '…') }}</td>
+    <td class="sup-sub" style="width:16%;">{{ s.type or '—' }}</td>
+    <td class="sup-sub" style="width:12%;">{{ s.color | cor_suprimento }}</td>
+    <td style="width:26%;">
+      <table class="bar-track" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="bar-{{ cls }}" style="width:{{ fill }}px; padding:0;">{% if fill >= 59 %}&nbsp;{% endif %}</td>
+          <td style="width:{{ 118 - fill }}px; padding:0;">{% if fill < 59 %}&nbsp;{% endif %}</td>
+        </tr>
+      </table>
+    </td>
+    <td class="pct-lbl" style="width:8%;">{{ pct }}%</td>
+  </tr>
+  {% endfor %}
+  {% if printer.supplies | length > MAX_SUP %}
+  <tr>
+    <td colspan="5" style="font-size:7.5pt; color:#94a3b8; font-style:italic;">
+      + {{ printer.supplies | length - MAX_SUP }} suprimento(s) adicional(is) disponivel(is) no portal
+    </td>
+  </tr>
+  {% endif %}
 </table>
 {% endif %}
 

@@ -8,14 +8,22 @@
   <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
     <div>
       <div class="card-title">Impressoras Cadastradas</div>
-      <div class="card-sub">Defina o dia de fechamento para cada impressora. Impressoras inativas não entram nos relatórios.</div>
+      <div class="card-sub">Defina o dia de fechamento para cada impressora. A coluna <strong>Auto</strong> mostra o dia detectado pelo campo Observation da API.</div>
     </div>
-    <button class="btn btn-primary" onclick="salvarConfig()">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-      </svg>
-      Salvar Configurações
-    </button>
+    <div style="display:flex; gap:10px;">
+      <button class="btn btn-ghost" onclick="sincronizar()">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+        </svg>
+        Sincronizar da API
+      </button>
+      <button class="btn btn-primary" onclick="salvarConfig()">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+        Salvar Configurações
+      </button>
+    </div>
   </div>
 
   <!-- Search -->
@@ -57,6 +65,7 @@
           data-cliente="{{ p.cliente }}"
           data-modelo="{{ p.modelo }}"
           data-patrimonio="{{ p.patrimonio }}"
+          data-observation="{{ p.observation }}"
           class="printer-row"
         >
           <td>
@@ -68,15 +77,13 @@
             <div style="font-size:10px; color:var(--muted);">Patrim. {{ p.patrimonio }}</div>
           </td>
           <td>
-            <select
-              class="field dia-select"
-              data-id="{{ p.printer_id }}"
-            >
-              <option value="" {% if not p.dia_fechamento %}selected{% endif %}>— Não definido</option>
-              <option value="10" {% if p.dia_fechamento == 10 %}selected{% endif %}>Dia 10</option>
-              <option value="20" {% if p.dia_fechamento == 20 %}selected{% endif %}>Dia 20</option>
-              <option value="30" {% if p.dia_fechamento == 30 %}selected{% endif %}>Dia 30</option>
-            </select>
+            {% if p.observation in ['10', '20', '30'] %}
+              <span class="badge badge-accent">Dia {{ p.observation }}</span>
+            {% elif p.observation %}
+              <span class="badge badge-muted" title="{{ p.observation }}">—</span>
+            {% else %}
+              <span style="color:var(--muted); font-size:11px;">—</span>
+            {% endif %}
           </td>
           <td>
             <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
@@ -106,7 +113,7 @@
   {% else %}
   <div class="empty-state">
     <div class="empty-state-icon">🖨️</div>
-    <div class="empty-state-text">Nenhuma impressora encontrada.<br>Faça uma coleta primeiro na tela de Snapshots.</div>
+    <div class="empty-state-text">Nenhuma impressora encontrada.<br>Clique em <strong>Sincronizar da API</strong> ou faça uma coleta na tela de Snapshots.</div>
   </div>
   {% endif %}
 </div>
@@ -147,21 +154,39 @@
 
   // Filtro de busca
   function filtrar() {
-    const q    = document.getElementById('search').value.toLowerCase();
-    const dia  = document.getElementById('filtro-dia').value;
+    const q   = document.getElementById('search').value.toLowerCase();
+    const dia = document.getElementById('filtro-dia').value;
     document.querySelectorAll('.printer-row').forEach(row => {
-      const cliente   = row.dataset.cliente.toLowerCase();
-      const serial    = row.dataset.serial.toLowerCase();
-      const select    = row.querySelector('.dia-select');
-      const diaValor  = select ? select.value : '';
+      const cliente  = row.dataset.cliente.toLowerCase();
+      const serial   = row.dataset.serial.toLowerCase();
+      const obs      = row.dataset.observation || '';
 
       const matchQ   = !q || cliente.includes(q) || serial.includes(q);
       const matchDia = !dia
-        || (dia === 'sem' && !diaValor)
-        || (dia !== 'sem' && diaValor === dia);
+        || (dia === 'sem' && !obs)
+        || (dia !== 'sem' && obs === dia);
 
       row.style.display = (matchQ && matchDia) ? '' : 'none';
     });
+  }
+
+  // Sincronizar da API
+  async function sincronizar() {
+    showLoading('Sincronizando impressoras com o último snapshot...');
+    try {
+      const res = await fetch('/api/config/sincronizar', { method: 'POST' });
+      const data = await res.json();
+      hideLoading();
+      if (data.ok) {
+        showToast(`${data.total} impressora(s) sincronizadas!`, 'success');
+        setTimeout(() => location.reload(), 1200);
+      } else {
+        showToast(data.erro || 'Erro ao sincronizar.', 'error');
+      }
+    } catch(e) {
+      hideLoading();
+      showToast('Erro de comunicação.', 'error');
+    }
   }
 
   // Salvar config
@@ -169,18 +194,15 @@
     const impressoras = [];
     document.querySelectorAll('.printer-row').forEach(row => {
       const id     = row.dataset.id;
-      const select = row.querySelector('.dia-select');
       const toggle = row.querySelector('.toggle');
-      const diaVal = select ? select.value : '';
 
       impressoras.push({
-        printer_id:     id,
-        serial:         row.dataset.serial,
-        cliente:        row.dataset.cliente,
-        modelo:         row.dataset.modelo,
-        patrimonio:     row.dataset.patrimonio,
-        dia_fechamento: diaVal ? parseInt(diaVal) : null,
-        ativo:          toggle ? toggle.classList.contains('on') : true,
+        printer_id: id,
+        serial:     row.dataset.serial,
+        cliente:    row.dataset.cliente,
+        modelo:     row.dataset.modelo,
+        patrimonio: row.dataset.patrimonio,
+        ativo:      toggle ? toggle.classList.contains('on') : true,
       });
     });
 
