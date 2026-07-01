@@ -6,17 +6,28 @@
 #  NAO execute este .ps1 direto: use "atualizar.bat" (duplo-clique).
 # ============================================================================
 
+param([string]$Root = '')
+
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $Repo    = 'avilamicael/impressora-mhtech'
-# Pasta da instalacao: via variavel (quando baixado e executado pelo .bat),
-# senao a pasta do proprio script, senao o diretorio atual.
-if ($env:MHT_ROOT)      { $Root = $env:MHT_ROOT.TrimEnd('\') }
+# Pasta da instalacao: prioridade -> parametro -Root, depois variavel MHT_ROOT,
+# depois a pasta do script, por fim o diretorio atual.
+if     ($Root)          { $Root = $Root.TrimEnd('\') }
+elseif ($env:MHT_ROOT)  { $Root = $env:MHT_ROOT.TrimEnd('\') }
 elseif ($PSScriptRoot)  { $Root = $PSScriptRoot }
 else                    { $Root = (Get-Location).Path }
 $Headers = @{ 'User-Agent' = 'mh-tech-updater' }
+
+# Sanidade: a pasta precisa ter o venv, senao estamos no lugar errado.
+if (-not (Test-Path (Join-Path $Root 'venv\Scripts\pythonw.exe'))) {
+    Write-Host ''
+    Write-Host "  ERRO: pasta do sistema nao encontrada em: $Root" -ForegroundColor Red
+    Write-Host '  Rode o atualizar.bat de dentro da pasta do sistema (onde estao app.py e venv).'
+    exit 1
+}
 
 # Arquivos/pastas do cliente que NUNCA devem ser sobrescritos
 $ExcludeFiles = @('config.json')
