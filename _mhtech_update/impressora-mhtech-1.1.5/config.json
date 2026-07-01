@@ -1,0 +1,1903 @@
+{
+  "impressoras": [
+    {
+      "printer_id": "41135190-b239-466a-8d24-11b603bf7132",
+      "serial": "088WBQBH7000Q3Y",
+      "cliente": "MH Tech",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "234",
+      "dia_fechamento": 10,
+      "ativo": true
+    },
+    {
+      "printer_id": "3a2bb67e-14e2-4a2e-93f9-72e658801cac",
+      "serial": "CNB7H7PG69",
+      "cliente": "DESPACHANTE GILVANI LTDA - EPP",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "013",
+      "dia_fechamento": 10,
+      "ativo": true
+    },
+    {
+      "printer_id": "01ffbaef-9185-48ef-80ba-3ae1c21af61a",
+      "serial": "BRBSL4DN06",
+      "cliente": "MATRIZ PADARIA E CHURRASCARIA LTDA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "335",
+      "dia_fechamento": 10,
+      "ativo": true
+    },
+    {
+      "printer_id": "53e47727-e1cd-40d4-a5eb-1d68673e15ef",
+      "serial": "X5NR031434K",
+      "cliente": "GICON CONTABILIDADE LTDA",
+      "modelo": "EPSON L5190",
+      "patrimonio": "462",
+      "dia_fechamento": 10,
+      "ativo": true
+    },
+    {
+      "printer_id": "053a3601-b7c6-4b67-a371-9e3b4088af39",
+      "serial": "ZER4BQAF600243T",
+      "cliente": "CARLOS GUILHERME ZANOTELLI",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "280",
+      "dia_fechamento": 10,
+      "ativo": true
+    },
+    {
+      "printer_id": "c5d1edee-bba3-4521-9ade-3b42a2c638bb",
+      "serial": "WMTM011607",
+      "cliente": "CARLOS GUILHERME ZANOTELLI",
+      "modelo": "EPSON L375",
+      "patrimonio": "130",
+      "dia_fechamento": 10,
+      "ativo": true
+    },
+    {
+      "printer_id": "f3b1d73e-7d07-4475-9ab4-193981e9d99f",
+      "serial": "X4FH005835",
+      "cliente": "BRUNO FERNANDES ARANDA 01703850009",
+      "modelo": "EPSON L396",
+      "patrimonio": "355",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "37886921-c9d3-4b0c-bf7a-40ecf2695059",
+      "serial": "CNB7H29LDD",
+      "cliente": "BRUNO FERNANDES ARANDA 01703850009",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "25",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "448efddc-9419-48c5-ba3a-47fae454fbe9",
+      "serial": "U63260K2N210512",
+      "cliente": "MONIQUE LIMA SOCIEDADE INDIVIDUAL DE ADVOCACIA",
+      "modelo": "Brother HL-6180DW",
+      "patrimonio": "164",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "2738a95e-3b79-4c57-b7e9-c5d6f6beccd8",
+      "serial": "X5EVE29965H",
+      "cliente": "WILLIAN PEDRO RODRIGUES 30932905897 - PARCERIA",
+      "modelo": "EPSON L3150",
+      "patrimonio": "459",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "946b9d29-d033-4a53-9570-b4667a3ae417",
+      "serial": "CNB7HBRB5X",
+      "cliente": "WILLIAN PEDRO RODRIGUES 30932905897 - PARCERIA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "23",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "7078bda6-7018-4c3d-ae9f-8cf92ce58f7f",
+      "serial": "XAAB200314H",
+      "cliente": "RESIDENCIAL QUATRO ILHAS",
+      "modelo": "EPSON L3250",
+      "patrimonio": "464",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "72c1b6c6-0748-4ee2-8032-5e7647c6bd9e",
+      "serial": "U62712B4N613625",
+      "cliente": "ASSIRAL ADMINISTRADORA E CORRETORA DE SEGUROS LTDA",
+      "modelo": "Brother DCP-7065DN",
+      "patrimonio": "80",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a6219814-82ab-4f03-9f3f-da241ba26e6e",
+      "serial": "CNB7FBY6D1",
+      "cliente": "WILLIAN PEDRO RODRIGUES 30932905897 - BELA VISTA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "157",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d59efd5e-e086-4b9c-add4-8c1dcb242293",
+      "serial": "VNBKLC2CZH",
+      "cliente": "WILLIAN PEDRO RODRIGUES 30932905897 - BELA VISTA",
+      "modelo": "HP Color LaserJet M477fnw",
+      "patrimonio": "387",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "7714a33d-c875-4127-9233-01e542413733",
+      "serial": "ZDDPB07M515QQ5N",
+      "cliente": "STAHL CONTABILIDADE LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "408",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "96989b76-ba8b-4086-adb7-d69868b6e1c6",
+      "serial": "BRBSKC286Z",
+      "cliente": "VIA VISAO K-PLATZ MALL COMERCIO DE PRODUTOS OPTICOS LTDA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "300",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8f280493-8211-4327-8e2f-cc8508cc03bd",
+      "serial": "BRBSJ7XN3L",
+      "cliente": "VIA EXATA KOBRASOL JOALHERIA E OPTICA LTDA",
+      "modelo": "HP LaserJet M127fn",
+      "patrimonio": "451",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "99a8ac56-6da8-4aee-91e1-07d5b0475b14",
+      "serial": "WMTM055175",
+      "cliente": "CAROLL LUCIA URIBE",
+      "modelo": "EPSON L375",
+      "patrimonio": "129",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "91ae6528-786e-4801-a8eb-e787247dcf97",
+      "serial": "CNB7FCV6VX",
+      "cliente": "CAROLL LUCIA URIBE",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "89",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "14f4f1d4-97f7-40a9-b200-2eeb9f049b49",
+      "serial": "BRBSK873M9",
+      "cliente": "CONSORCIO DE INOVACAO NA GESTAO PUBLICA",
+      "modelo": "HP Color LaserJet M452dw",
+      "patrimonio": "337",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "3e5892f3-ccef-46ae-ae26-04c575bbe286",
+      "serial": "ZDDPB07JC10WLMW",
+      "cliente": "CONSORCIO DE INOVACAO NA GESTAO PUBLICA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "313",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "29789333-fa12-4dd2-ab1c-43f45dca979e",
+      "serial": "U63267M2N339173",
+      "cliente": "FREITAS COMERCIO DE VEICULOS EIRELI - EPP",
+      "modelo": "Brother MFC-8912DW",
+      "patrimonio": "119",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "731771ea-cc01-40cc-855c-36b2d28593b4",
+      "serial": "BRBSJCYG08",
+      "cliente": "MITRA METROPOLITANA DE FLORIANOPOLIS",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "278",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "f466a7ed-30d0-4725-81b9-402f7d809e6e",
+      "serial": "X5NR019708",
+      "cliente": "MITRA METROPOLITANA DE FLORIANOPOLIS",
+      "modelo": "EPSON L5190",
+      "patrimonio": "446",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "aca29aa9-6d8d-4b26-8fec-5140f13208b8",
+      "serial": "CNF8H3G1RN",
+      "cliente": "ADSERVI ITAJAI",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "189",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "7a0b11a8-4e67-4a6d-802f-500d431f300c",
+      "serial": "088WB07M816QJXV",
+      "cliente": "MARCELINO JUNIOR PROCESSAMENTOS LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "437",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "27a6debd-c50b-41d4-989a-d5ce529975a6",
+      "serial": "088WBQAJ20007DY",
+      "cliente": "MARCELINO JUNIOR PROCESSAMENTOS LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "304",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "bf81b72a-95ca-4f76-a152-1a2039f58465",
+      "serial": "ZDDPBQAJ7000FMM",
+      "cliente": "NH SERVICOS CONTABEIS S/S",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "274",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "b6534964-ac72-4798-b942-a6e5e39d8623",
+      "serial": "ZDDPBQAJ7000C8F",
+      "cliente": "NH SERVICOS CONTABEIS S/S",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "273",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "5cb1dff9-a14f-4aa9-8ba9-c49087634285",
+      "serial": "ZDDPB07JC10WFYJ",
+      "cliente": "VIA FLORIANOPOLIS COMERCIO DE PRODUTOS OPTICOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "317",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "2c8826fc-ee6b-4fc8-8edd-30637103395e",
+      "serial": "U62674D3N872794",
+      "cliente": "ZENITH CENTRO DE ENSINO E TRATAMENTO ODONTOLOGICO LTDA",
+      "modelo": "Brother HL-2270DW",
+      "patrimonio": "72",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "604c39bb-788d-4af1-90ab-301aed25ed18",
+      "serial": "U62702F3N674742",
+      "cliente": "ZENITH CENTRO DE ENSINO E TRATAMENTO ODONTOLOGICO LTDA",
+      "modelo": "Brother MFC-7860DW",
+      "patrimonio": "37",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "736f96d0-ba17-4abb-bed3-566b15702c97",
+      "serial": "U62674D3N872942",
+      "cliente": "ZENITH CENTRO DE ENSINO E TRATAMENTO ODONTOLOGICO LTDA",
+      "modelo": "Brother HL-2270DW",
+      "patrimonio": "70",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "88b4247e-5b40-40b4-b476-35ea7bfc5064",
+      "serial": "X4FH016251",
+      "cliente": "PUPILOO CLINICA DE OFTALMOLOGIA LTDA",
+      "modelo": "EPSON L396",
+      "patrimonio": "448",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "49b1c023-9c27-4832-b008-83da003c658d",
+      "serial": "ZDDPB07M515VNYA",
+      "cliente": "COLEGIO DESPERTAR LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "399",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "9b496e0a-e597-4ae9-a513-b29b7f39a460",
+      "serial": "ZDDPB07M515VNTA",
+      "cliente": "",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "e850d817-fe8f-4823-8cef-8ac719d25d05",
+      "serial": "CNF8GBSH8C",
+      "cliente": "",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "174",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "0378a677-e7d2-4bff-af73-c7a0fc37ad1c",
+      "serial": "BRFSG4S096",
+      "cliente": "JACKSON GARCIA",
+      "modelo": "HP LaserJet M1536dnf",
+      "patrimonio": "110",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "50f5b0e9-952d-4960-a47c-0681cf5a3a63",
+      "serial": "BRBSMB73TZ",
+      "cliente": "",
+      "modelo": "HP LaserJet M428dw",
+      "patrimonio": "675",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "c5acf9eb-18e4-4095-a3ac-9bb0706da0da",
+      "serial": "CNB7FDML63",
+      "cliente": "CENTRO ESCOLAR AQUARELA LTDA - ME",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "257",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a13964b8-518e-4de2-9abd-2e166506cf32",
+      "serial": "ZDDPB07J9102K7P",
+      "cliente": "D & A COMERCIO DE PECAS E REPAROS DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "290",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a34324a4-b7ff-45d5-96e1-ca6840bb27d8",
+      "serial": "ZER4BQAF60023XY",
+      "cliente": "AGUIAR COMERCIO DE PECAS E REPAROS DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "203",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "1c69d744-5187-4d33-9095-acb0a72c9ee2",
+      "serial": "CNB7HBRB68",
+      "cliente": "ANEXO CONTABILIDADE S/S - ME",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "228",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d7f16283-6012-496c-9fe1-36f43b2acb01",
+      "serial": "U62702D3N405767",
+      "cliente": "RENATA LEVANDOWSKI OLIVEIRA",
+      "modelo": "Brother MFC-7860DW",
+      "patrimonio": "36",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "aad00cd8-3863-4877-a968-913f086133ee",
+      "serial": "CNB7H8726G",
+      "cliente": "WOLF CORRESPONDENTE IMOBILIARIO LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "15",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "038db1ba-76b1-4ed7-8759-87536448d445",
+      "serial": "088WBQAJ5000MDA",
+      "cliente": "HERMES E SOUZA CONTADORES ASSOCIADOS S/S LTDA - EPP",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "243",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "37b35731-8cf2-46be-b183-cbb75edb7040",
+      "serial": "CNB7J3B2RX",
+      "cliente": "HERMES E SOUZA CONTADORES ASSOCIADOS S/S LTDA - EPP",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "230",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "321b6583-a900-47bb-9294-40bfe97bf4b0",
+      "serial": "U63264G4N807548",
+      "cliente": "",
+      "modelo": "Brother DCP-8157DN",
+      "patrimonio": "41",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "1f42a6c2-36d3-4359-8c60-4367f85a7349",
+      "serial": "U62674D3N872813",
+      "cliente": "E DE CASA SUPERMERCADOS LTDA ARIRIU",
+      "modelo": "Brother HL-2270DW",
+      "patrimonio": "71",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d48fa6e0-1ad8-4fba-9552-0a8ef2bf0191",
+      "serial": "CNB7HBRB57",
+      "cliente": "RE9 SOLUCOES CONTABEIS E ADMINISTRATIVAS EIRELI",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "18",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "65ce88d4-fed3-4da3-88f7-0eb508c2150f",
+      "serial": "CNB7FBY5R6",
+      "cliente": "E DE CASA SUPERMERCADOS LTDA CENTRO",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "156",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "9476ddf9-f8cb-4fdc-8817-802e27d347d2",
+      "serial": "BRDSGDKQ09",
+      "cliente": "SOS COMERCIO DE PECAS DE MOTO LTDA",
+      "modelo": "HP LaserJet 400 M401dne",
+      "patrimonio": "182",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "1ff73ec8-c61e-4b23-8c37-9a02d5788f3f",
+      "serial": "VNB8K3RJKL",
+      "cliente": "TIAGO PEREIRA DOS SANTOS 06454059901",
+      "modelo": "HP Color LaserJet M477fnw",
+      "patrimonio": "302",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "85bcca36-d512-42de-9262-334b532c7cc0",
+      "serial": "ZDDPB07J9103BYH",
+      "cliente": "CENTRO DE FORMACAO DE CONDUTORES PRATICAR LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "295",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "af9baffb-bab8-4a29-b66d-1c8ec8193081",
+      "serial": "U63267J2N252185",
+      "cliente": "GERAMAC EQUIPAMENTOS LTDA",
+      "modelo": "Brother MFC-8912DW",
+      "patrimonio": "194",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "cd232b7d-0425-49e8-b1f2-81a1c5e3330a",
+      "serial": "088WBQBH7000MWB",
+      "cliente": "ESSENZA ADMINISTRADORA DE CONDOMINIOS LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "227",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "9068ab8e-45e5-4518-9988-dac489766539",
+      "serial": "CNB7H2B0JD",
+      "cliente": "LKW EXPRESS TRANSPORTES LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "14",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "562eb7e6-fbd2-4d3f-b189-a3c60a63dfa2",
+      "serial": "BRBSJ3F7BR",
+      "cliente": "CONDOMINIO GARDEN VILLE RESIDENCE",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "51",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "bd14a7a5-73a1-4c8b-bc78-59cdfd11aeda",
+      "serial": "U63260K2N210320",
+      "cliente": "WV HIDROANALISE LTDA",
+      "modelo": "Brother HL-6180DW",
+      "patrimonio": "268",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "377e4eaa-3801-4647-a18b-7f939d31009e",
+      "serial": "U62674D3N872818",
+      "cliente": "WV HIDROANALISE LTDA",
+      "modelo": "Brother HL-2270DW",
+      "patrimonio": "69",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d71d0c01-5e82-4d39-9e0f-a2b2921a1840",
+      "serial": "ZDDPB07M515VPAX",
+      "cliente": "METALCOR TINTAS, FERRAMENTAS E SUPRIMENTOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "409",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "b3232b23-a83e-4293-8794-9b42ea26314b",
+      "serial": "U63885G9N817592",
+      "cliente": "ASSOCIACAO DOS APOSENTADOS E PENSIONISTAS DA CELESC",
+      "modelo": "Brother DCP-L2540DW",
+      "patrimonio": "424",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "088fb7cb-3ac4-4d28-beee-15e96679113d",
+      "serial": "U63262D4N715918",
+      "cliente": "SC REGULARIZACAO DOCUMENTAL LTDA",
+      "modelo": "Brother DCP-8112DN",
+      "patrimonio": "441",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "92398380-211b-4806-8d3c-cdc5120e9340",
+      "serial": "ZDDPB07J9102QKX",
+      "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "292",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4cb0723e-6bd9-48d6-8236-228ca9335a08",
+      "serial": "088WBQAJ50012PE",
+      "cliente": "SC REGULARIZACAO DOCUMENTAL LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "250",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "abeed9c2-372f-4a32-bee9-fab9cabee09e",
+      "serial": "S3YK009294",
+      "cliente": "ASSOCIACAO DOS APOSENTADOS E PENSIONISTAS DA CELESC",
+      "modelo": "EPSON L355",
+      "patrimonio": "222",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "b4f98077-7441-4d48-b69b-13cdd597123f",
+      "serial": "U63266M2N337968",
+      "cliente": "ASN CONTABILIDADE LTDA",
+      "modelo": "Brother MFC-8712DW",
+      "patrimonio": "7",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "6bf5a51d-a258-4f40-9639-66fb5c6b4f29",
+      "serial": "ZDDPB07KA14BH7Y",
+      "cliente": "ASN CONTABILIDADE LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "371",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "77aeee3f-09ea-4e57-b392-222db1aff33b",
+      "serial": "U63264D4N717294",
+      "cliente": "",
+      "modelo": "Brother DCP-8157DN",
+      "patrimonio": "44",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "b89f0490-cc9e-4ce9-bf3c-b52a60ff247e",
+      "serial": "ZDDPB07JC10WMBA",
+      "cliente": "TRK SERVICOS E COMERCIO LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "310",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "fdf60a05-8953-4102-a00d-3a022e0bc3d3",
+      "serial": "BRB7M5G5NG",
+      "cliente": "CENTRO EDUCACIONAL CISNE BRANCO LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "398",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "751041da-34d0-4cf3-8408-d13ac67b264a",
+      "serial": "ZDDPBQAH7000BQB",
+      "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "258",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4d14bc4c-7e2c-4903-b243-5df7841702ba",
+      "serial": "ZDDPB07K612SNKY",
+      "cliente": "PEMAVEL COMERCIO DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "348",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "60c4143f-dd51-4a11-b65e-35642b70cda3",
+      "serial": "ZDDPBQAJ6002DCT",
+      "cliente": "PEMAVEL COMERCIO DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "255",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "c4f7f6c3-52be-454e-beab-38ba3cb4f938",
+      "serial": "ZDDPB07K612SK7Y",
+      "cliente": "PEMAVEL COMERCIO DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "351",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "e76cd174-6c56-4287-9ae6-834552eb02f5",
+      "serial": "U62700F3N667175",
+      "cliente": "FH VEICULOS LTDA",
+      "modelo": "Brother MFC-7360N",
+      "patrimonio": "123",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "548b453d-1278-4bd2-836c-d3ef170411d9",
+      "serial": "U62712H3N855462",
+      "cliente": "FH VEICULOS LTDA",
+      "modelo": "Brother DCP-7065DN",
+      "patrimonio": "85",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "af486ef3-de35-41d3-a9c0-d6ac36563a19",
+      "serial": "BRDSDDT064",
+      "cliente": "CENTRO DE FORMACAO DE CONDUTORES HARMONIA LTDA - ME",
+      "modelo": "HP LaserJet M1536dnf",
+      "patrimonio": "115",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "841849f1-2e08-4093-ab35-67f8fe9ecca8",
+      "serial": "ZDDPB07JC10WFXJ",
+      "cliente": "CATTONI CONTABILIDADE E CONDOMINIOS S.S. LTDA. - ME",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "318",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8d692a28-4f07-472e-8e83-8b4a65ec7c1d",
+      "serial": "BRFSG7S05F",
+      "cliente": "",
+      "modelo": "HP LaserJet M1536dnf",
+      "patrimonio": "109",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "c21b88cf-815d-4b50-bfde-571034113226",
+      "serial": "ZDDPB07J9102KRP",
+      "cliente": "",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "293",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8df98f1d-a3de-4158-8ef7-09b1698729ee",
+      "serial": "ZDDPBQAJ9000EFM",
+      "cliente": "MVA CORRETORA DE SEGUROS LTDA - ME",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "282",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "fe71879d-ce63-480f-9417-a5d5f2382b73",
+      "serial": "CNF8H4RG43",
+      "cliente": "PRATA E PRATOS LOCACAO DE PECAS LTDA",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "148",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "134886f0-8b24-4683-aedb-d7e823021f60",
+      "serial": "BRBSHD2711",
+      "cliente": "",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "52",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "dc14d0ad-e737-4d46-afff-32d9be9bf611",
+      "serial": "BRBSK383M4",
+      "cliente": "SERGIO RAMOS SOCIEDADE INDIVIDUAL DE ADVOCACIA",
+      "modelo": "HP Color LaserJet M452dw",
+      "patrimonio": "239",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "54a6dfaf-d733-486c-b7f4-40b44354ab0a",
+      "serial": "BRBSHBQ73H",
+      "cliente": "SERGIO RAMOS SOCIEDADE INDIVIDUAL DE ADVOCACIA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "141",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "ed11960f-a635-44ad-8975-f141697c397e",
+      "serial": "BRBSL4DN04",
+      "cliente": "M.O IMOVEIS LTDA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "333",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "456c7d93-7da0-4561-a3d1-b1ac83ee0e84",
+      "serial": "BRFSFD2015",
+      "cliente": "MKP COMERCIO DE MOTOCICLETAS LTDA",
+      "modelo": "HP LaserJet M1536dnf",
+      "patrimonio": "188",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "fa998509-92f3-4864-bdd8-193fea46f500",
+      "serial": "ZDDPB07M515VNZA",
+      "cliente": "WOW CONTABILIDADE S/S",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "392",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "da689304-d3ec-452c-9e36-44ee70cb2b7f",
+      "serial": "U63269J2N240402",
+      "cliente": "LAR DE IDOSOS SANTA PAULINA LTDA",
+      "modelo": "Brother MFC-8952DW",
+      "patrimonio": "74",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a84bd886-b3ac-46cd-b207-b3c7958685cc",
+      "serial": "CNB7H29JPW",
+      "cliente": "COLEGIO CAMINHO FELIZ LTDA. - ME",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "88",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "ced801a4-fa12-408e-b4d5-da169dd06f72",
+      "serial": "ZDDPB07M515VS3V",
+      "cliente": "",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "391",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4d3f62ef-603a-4ec9-8ad1-7aa907e79eb5",
+      "serial": "BRFSG35090",
+      "cliente": "NORONHA COMERCIO DE VEICULOS LTDA",
+      "modelo": "HP LaserJet M1536dnf",
+      "patrimonio": "201",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "79d01d13-d39b-49c4-944a-29748bddede1",
+      "serial": "CNB7HCD3MX",
+      "cliente": "NORONHA COMERCIO DE VEICULOS LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "20",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "bacc1ce0-2261-40f7-998c-9574e814cca8",
+      "serial": "088WB07K311R04N",
+      "cliente": "NORONHA COMERCIO DE VEICULOS LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "320",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "e9cbe530-bffb-4502-b7da-655b2e70ea63",
+      "serial": "088WB07K311MDDN",
+      "cliente": "PARCERIA ADMINISTRACAO DE CONDOMINIOS LTDA - ME",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "248",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "42d6a73b-08d8-43f7-b126-de57f2c89ad5",
+      "serial": "35C69011",
+      "cliente": "",
+      "modelo": "Canon iR1643i II",
+      "patrimonio": "",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4a787c25-10cc-46af-96bd-f7e83eb8adb3",
+      "serial": "ZDDPB07JC10WLKW",
+      "cliente": "PERSONAL CAR COMERCIO DE PECAS E REPARO DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "314",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "188611e0-f8ed-4078-ab6e-1ca30e027a8d",
+      "serial": "ZDDPB07J9102HJN",
+      "cliente": "EXPRESSO DOCUMENTOS DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "297",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "bd25a4e0-1454-47bd-9ea9-fb7409037bc2",
+      "serial": "U63885G9N817593",
+      "cliente": "RESIDENCIAL FLORES DO VALE",
+      "modelo": "Brother DCP-L2540DW",
+      "patrimonio": "425",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "cb00a8dc-6fb5-4990-93ee-515b8d6a16ff",
+      "serial": "ZDDPBQAJ9000EAJ",
+      "cliente": "FEMAI - EMPREENDIMENTOS IMOBILIARIOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "283",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4550def2-89c5-465f-8a18-0564191df244",
+      "serial": "ZDDPB07J9102HMN",
+      "cliente": "FEMAI - EMPREENDIMENTOS IMOBILIARIOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "289",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a674d55c-c66c-42dd-a514-7f76e00b5e0a",
+      "serial": "XBBW042315",
+      "cliente": "ASSOCIACAO DOS EMPREENDEDORES DAS MICRO E PEQUENAS EMPRESAS E DOS EMPREENDEDORES INDIVIDUAIS DA REGI",
+      "modelo": "EPSON L5590",
+      "patrimonio": "721",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4f70b3e4-7769-4c28-a16e-4d0421b0dee6",
+      "serial": "CNB9R64050",
+      "cliente": "TRADE MEDICAL COMERCIO DE MATERIAIS HOSPITALARES LTDA (LOCADORA)",
+      "modelo": "HP LaserJet P2035n",
+      "patrimonio": "444",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "fd8cd78d-dbff-4819-9466-f58031048d43",
+      "serial": "BRBFD1V94M",
+      "cliente": "TRADE MEDICAL COMERCIO DE MATERIAIS HOSPITALARES LTDA (LOCADORA)",
+      "modelo": "HP LaserJet P2035n",
+      "patrimonio": "445",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "98363460-f6d8-4c63-9770-0683de6ca267",
+      "serial": "CNF8H2FDHV",
+      "cliente": "TRADE MEDICAL COMERCIO DE MATERIAIS HOSPITALARES LTDA (LOCADORA)",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "209",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "2ea39c79-2d76-4689-8a26-b30b2a4e05af",
+      "serial": "CNF8H3G24Q",
+      "cliente": "TRADE MEDICAL COMERCIO DE MATERIAIS HOSPITALARES LTDA (LOCADORA)",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "46",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "730b0d5a-4667-47a1-96dc-5e746928c869",
+      "serial": "U62702F3N674744",
+      "cliente": "TRADE MEDICAL COMERCIO DE MATERIAIS HOSPITALARES LTDA (LOCADORA)",
+      "modelo": "Brother MFC-7860DW",
+      "patrimonio": "38",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "2ef8aff0-dc06-472a-a447-344f24c5562b",
+      "serial": "CNB7HBRB0W",
+      "cliente": "J. C. M. NITEROI REFRIGERACAO LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "207",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "1d592f14-82a8-4863-946f-3598478806aa",
+      "serial": "CNB7FDN7XP",
+      "cliente": "",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "97d53f18-970b-41d5-ac13-b8e2fc4ae9c3",
+      "serial": "BRCSH85045",
+      "cliente": "J. C. M. NITEROI REFRIGERACAO LTDA",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "326",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4ec58d46-d5fa-45ed-a50e-98e8f9b0ba71",
+      "serial": "ZDDPBQAHB001F6T",
+      "cliente": "AUTO FACIL DESPACHANTE LTDA - ME (MUNDO CAR)",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "259",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "52568920-86cd-45e9-a99f-5ee923ea385b",
+      "serial": "L0J558980",
+      "cliente": "",
+      "modelo": "Brother MFC-8890DW",
+      "patrimonio": "487",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "6c202b9e-14f9-4f60-b262-bbdc634dc76b",
+      "serial": "XAAB821834H",
+      "cliente": "",
+      "modelo": "EPSON L3250",
+      "patrimonio": "475",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "20bf9e76-1938-480c-8399-3b4e0042cc38",
+      "serial": "CNB7FDMLJZ",
+      "cliente": "RG SERVICOS ESPECIALIZADOS LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "94",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "661f5c9c-3fa0-4c2b-9d87-b79620030a84",
+      "serial": "CNB7J3B2QN",
+      "cliente": "RG SERVICOS ESPECIALIZADOS LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "328",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "74b39dec-5922-441d-8e95-4f0a66dd8264",
+      "serial": "CNB7GD1712",
+      "cliente": "RG SERVICOS ESPECIALIZADOS LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "197",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "ab5b51f1-1749-425f-b8aa-f9349ec20c4b",
+      "serial": "XBBW041410",
+      "cliente": "RG SERVICOS ESPECIALIZADOS LTDA",
+      "modelo": "EPSON L5590",
+      "patrimonio": "723",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "62723433-fa43-4680-9e16-01287f850a18",
+      "serial": "BRCSG3N24C",
+      "cliente": "EXPRESSO DOCUMENTOS DE VEICULOS LTDA",
+      "modelo": "HP LaserJet P1606dn",
+      "patrimonio": "206",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "9c388f8c-695d-4b03-a014-a09b7b96e9b4",
+      "serial": "CNF8H2FF36",
+      "cliente": "EXPRESSO DOCUMENTOS DE VEICULOS LTDA",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "181",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4ae95978-671f-4d1b-93e2-8225f94a0521",
+      "serial": "ZDDPB07K612SNGY",
+      "cliente": "EXPRESSO DOCUMENTOS DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "349",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "04bb2165-7a27-41ee-8f38-8cc730936c23",
+      "serial": "XAAB322762",
+      "cliente": "EXPRESSO DOCUMENTOS DE VEICULOS LTDA",
+      "modelo": "EPSON L3250",
+      "patrimonio": "467",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "2357910d-24e0-4aa0-994e-a14d91fe4b62",
+      "serial": "ZDDPB07M515VP0X",
+      "cliente": "",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "395",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "219f08db-a93d-4c30-aed9-bb0708ddeb5f",
+      "serial": "A0J319769",
+      "cliente": "M & P ASSESSORIA CONTABIL EIRELI",
+      "modelo": "Brother MFC-8890DW",
+      "patrimonio": "461",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "0a3ded53-86b8-409a-b029-241da6a3510b",
+      "serial": "U63265A3N349432",
+      "cliente": "M & P ASSESSORIA CONTABIL EIRELI",
+      "modelo": "Brother MFC-8512DN",
+      "patrimonio": "145",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "f9912133-e5f8-497f-9a73-45bfa79203ba",
+      "serial": "U62712F4N126330",
+      "cliente": "M & P ASSESSORIA CONTABIL EIRELI",
+      "modelo": "Brother DCP-7065DN",
+      "patrimonio": "79",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "e27198bc-0f82-4a89-9eff-6c3ef37d117f",
+      "serial": "BRCSH2S08T",
+      "cliente": "M & P ASSESSORIA CONTABIL EIRELI",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "212",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8a69af49-e92b-4b29-80d8-c5bb04f06194",
+      "serial": "BRCSGCC09Q",
+      "cliente": "",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "99",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "419f5d55-367c-4211-84ed-f28941a2fe3e",
+      "serial": "BRBSBDJ0Y0",
+      "cliente": "GERAMAC EQUIPAMENTOS LTDA",
+      "modelo": "HP LaserJet P1102w",
+      "patrimonio": "379",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "95135bdd-bc2c-41e0-9655-65433c62fcaa",
+      "serial": "BRFSFDT00M",
+      "cliente": "JAN ENVASADORA DE AGUAS MINERAIS LTDA",
+      "modelo": "HP LaserJet M1536dnf",
+      "patrimonio": "196",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "303f198f-a194-4a48-adb4-31fb2ec934e7",
+      "serial": "BRBSJ27666",
+      "cliente": "JAN ENVASADORA DE AGUAS MINERAIS LTDA",
+      "modelo": "HP LaserJet M426dw",
+      "patrimonio": "202",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "374c76af-77eb-4184-8871-9314709f04c3",
+      "serial": "BRBSJCYFZP",
+      "cliente": "JAN ENVASADORA DE AGUAS MINERAIS LTDA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "279",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "98d6e71e-e755-48ff-82a1-3d56c5213ccb",
+      "serial": "CNB7HCD3LT",
+      "cliente": "JAN ENVASADORA DE AGUAS MINERAIS LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "231",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "5d44f0de-f503-4d62-bf8b-2e5fddeea507",
+      "serial": "BRBSMB73V8",
+      "cliente": "LE MENTOR BAR & RESTAURANTE LTDA",
+      "modelo": "HP LaserJet M428-M429",
+      "patrimonio": "672",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "350c640f-2213-4118-b07b-93504a01253d",
+      "serial": "ZDDPB07K612SNBY",
+      "cliente": "CATTONI CONTABILIDADE E CONDOMINIOS S.S. LTDA. - ME",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "345",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "32fe91f6-09bc-4de7-85c5-13eebce0fb78",
+      "serial": "088WB07M816W8NL",
+      "cliente": "LOGOS CONTABILIDADE S/S LTDA - EPP",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "432",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "78437b3b-c28b-46b3-acaa-341caf52e83d",
+      "serial": "BRBST8F086",
+      "cliente": "JPL CORRETORA DE SEGUROS LTDA - EPP",
+      "modelo": "HP Laser 432fdn",
+      "patrimonio": "729",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "79257597-c152-42f3-a95d-3aa3cef6072d",
+      "serial": "BRBSJ3F7BP",
+      "cliente": "PARCERIA ADMINISTRACAO DE CONDOMINIOS LTDA - ME",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "220",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "fa7a9703-1301-4b83-bd1b-e47fccb36d75",
+      "serial": "CNF8H648Q1",
+      "cliente": "PARCERIA ADMINISTRACAO DE CONDOMINIOS LTDA - ME",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "190",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "480eadc8-1e6f-4c88-8989-f7fcc160808f",
+      "serial": "U63268J2N234156",
+      "cliente": "PARCERIA ADMINISTRACAO DE CONDOMINIOS LTDA - ME",
+      "modelo": "Brother MFC-8952DW",
+      "patrimonio": "75",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "c3a13943-15b1-472d-8980-30f5d2fb6d56",
+      "serial": "088WBQAJ5000YJV",
+      "cliente": "",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "242",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "7c07e0e4-b345-4625-8eab-be2c7e582d1e",
+      "serial": "XAAB252509",
+      "cliente": "PARCERIA ADMINISTRACAO DE CONDOMINIOS LTDA - ME",
+      "modelo": "EPSON L3250",
+      "patrimonio": "465",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "79acd798-d786-44ce-aeea-60cdecf4377a",
+      "serial": "X5EVB50897",
+      "cliente": "PARCERIA ADMINISTRACAO DE CONDOMINIOS LTDA - ME",
+      "modelo": "EPSON L3150",
+      "patrimonio": "449",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d4973260-16a0-4fac-866a-3801df50e706",
+      "serial": "U64187B9N446520",
+      "cliente": "",
+      "modelo": "Brother HL-L6402DW",
+      "patrimonio": "",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "219bf687-3946-449a-83de-ab06e0edf8b0",
+      "serial": "PHB8J580XN",
+      "cliente": "MEDPLEX DR EGAS MONIZ CONSTRUCOES S.A.",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "53",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "41559cc3-37c8-4d70-ac69-9b8b5bb2e2a0",
+      "serial": "CNB7H29HZD",
+      "cliente": "J. C. M. NITEROI REFRIGERACAO LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "24",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "114b9652-b17e-43ad-b5f8-c2502cf37995",
+      "serial": "CNB7H7PG65",
+      "cliente": "J. C. M. NITEROI REFRIGERACAO LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "17",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "c7024ea6-c1ca-45e3-b21f-84c51f4c9548",
+      "serial": "CNB7F3Z1CH",
+      "cliente": "J. C. M. NITEROI REFRIGERACAO LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "93",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "34c57ce9-bfd5-456d-acde-c0c62c2f8c87",
+      "serial": "CNB7H29JN3",
+      "cliente": "MH Tech",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "096",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a22ac9ad-f551-4bfd-86d8-0d1f0eaeed92",
+      "serial": "ZDDPB07KA14BHAY",
+      "cliente": "COLEGIO BJ LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "372",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "c86c876e-8fb6-4d02-a846-95f5cdcb1394",
+      "serial": "XAAB474724",
+      "cliente": "COLEGIO BJ LTDA",
+      "modelo": "EPSON L3250",
+      "patrimonio": "469",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "eb0cd3cd-9324-471f-909a-6c34f046ff26",
+      "serial": "CNF8H6CBQH",
+      "cliente": "ASSOCIACAO EMPRESARIAL DE PALHOCA",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "180",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "ec8d70c6-9f1f-4df2-9b62-b106eaabc1b8",
+      "serial": "BRFSG2R016",
+      "cliente": "JOTA S EMPREENDIMENTOS IMOBILIARIOS LTDA",
+      "modelo": "HP LaserJet M1536dnf",
+      "patrimonio": "114",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4a09c8ef-0602-49d7-bda2-048bc3877002",
+      "serial": "U63269J2N240358",
+      "cliente": "JOTA S EMPREENDIMENTOS IMOBILIARIOS LTDA",
+      "modelo": "Brother MFC-8952DW",
+      "patrimonio": "76",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "2228ac1b-d48b-4aec-ae3e-63bc881cc88b",
+      "serial": "BRFSG4S091",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "HP LaserJet M1536dnf",
+      "patrimonio": "112",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "58e98a7f-1257-47f4-8335-e73e4c6538e4",
+      "serial": "U62712L4N266932",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "Brother DCP-7065DN",
+      "patrimonio": "083",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a9116d61-b466-4212-af50-b6579238c501",
+      "serial": "088WB07K612ZG3N",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "357",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "6b69bbd9-217b-4daa-a562-95c4be4ad8f8",
+      "serial": "088WB07M816WC6F",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "428",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8b57ebc2-93ad-41a0-8dd7-256338065c73",
+      "serial": "088WB07K311MDZN",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "322",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "4106b0f0-8acb-42ec-af68-09f59688be1c",
+      "serial": "088WB07M816WE1V",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "430",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a71ffcc9-1be0-428d-89be-51e48d9e6840",
+      "serial": "XBBW001558",
+      "cliente": "",
+      "modelo": "EPSON L5590",
+      "patrimonio": "482",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "25887a7d-f28e-49dd-b6dc-51714640cad7",
+      "serial": "088WB07K311ME8N",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "321",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "fd36fdaf-609b-468b-9822-d60c5370b1d4",
+      "serial": "088WB07M816WD8J",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "427",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "1894242c-8e73-4b29-9006-f7b9be318ab8",
+      "serial": "088WBQAJ20007ED",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "245",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "45679d79-a571-4fb1-b584-3c4fac12f1fa",
+      "serial": "ZDDPB07K612SNQY",
+      "cliente": "CONDOMINIO TERRA NOVA PALHOCA I",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "350",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a61990be-7ac0-4d1a-9406-329e1750da7a",
+      "serial": "BRBS8471M2",
+      "cliente": "",
+      "modelo": "HP LaserJet P1005",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "6097cab5-031d-46a3-932d-e779d5dd5529",
+      "serial": "CNB7H7PG6P",
+      "cliente": "MVA CORRETORA DE SEGUROS LTDA - ME",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "90",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "108a44d9-c2db-47a7-b708-5442a9d5e187",
+      "serial": "BRBST8D031",
+      "cliente": "MVA CORRETORA DE SEGUROS LTDA - ME",
+      "modelo": "HP Laser 432fdn",
+      "patrimonio": "725",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "1a0a80c2-52a0-436a-9edd-6850b7377d18",
+      "serial": "088WB07K91405JN",
+      "cliente": "MVA CORRETORA DE SEGUROS LTDA - ME",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "364",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "01193f2c-d0d2-4e66-9ea9-42a76b63df0b",
+      "serial": "BRCSGCC0CR",
+      "cliente": "M & P ASSESSORIA CONTABIL EIRELI",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "98",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "58778ab1-0582-4593-8036-ea45e4be51a3",
+      "serial": "BRBSTBW0FR",
+      "cliente": "FRJ ADMINISTRADORA DE SERVICOS LTDA",
+      "modelo": "HP Laser 432fdn",
+      "patrimonio": "732",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "9f068099-42bf-4307-b2b3-9f26044ece3e",
+      "serial": "BRBSTBW0FH",
+      "cliente": "FRJ ADMINISTRADORA DE SERVICOS LTDA",
+      "modelo": "HP Laser 432fdn",
+      "patrimonio": "733",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "e35c42f2-9782-465d-9552-2d326ff74ede",
+      "serial": "BRBSTBW07B",
+      "cliente": "FRJ ADMINISTRADORA DE SERVICOS LTDA",
+      "modelo": "HP Laser 432fdn",
+      "patrimonio": "734",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "b02e3817-fdb1-41d8-b913-8bb1f0c5af5e",
+      "serial": "U62702D3N405890",
+      "cliente": "PEDRO HENRIQUE ALVES",
+      "modelo": "Brother MFC-7860DW",
+      "patrimonio": "34",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "38b0023d-ea82-4585-8dd6-c3e0bce3aef3",
+      "serial": "U63266J2N239390",
+      "cliente": "ADSERVI ITAJAI",
+      "modelo": "Brother MFC-8712DW",
+      "patrimonio": "8",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a0434c9b-41f2-4e57-8f8a-a55bc20a1769",
+      "serial": "X8GQ011576",
+      "cliente": "ADSERVI SÃO JOSÉ",
+      "modelo": "EPSON L5290",
+      "patrimonio": "477",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "1043dccd-0f48-402c-9545-1d2a2a8996c4",
+      "serial": "088WBQAJ50012LW",
+      "cliente": "SC REGULARIZACAO DOCUMENTAL LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "251",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "97161e4b-6ad2-43b0-853a-452e095263ef",
+      "serial": "F1J766953",
+      "cliente": "NATAL COMERCIO DE MARMORES E GRANITOS LTDA",
+      "modelo": "Brother MFC-8480DN",
+      "patrimonio": "4",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "72d69fec-511f-45c7-a141-cf195b46a1d7",
+      "serial": "X8G6073034F",
+      "cliente": "COLEGIO CAMINHO FELIZ LTDA. - ME",
+      "modelo": "EPSON L6270",
+      "patrimonio": "720",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "3ea75fe4-44e5-4142-9786-19be635a744c",
+      "serial": "CNB7H7PF29",
+      "cliente": "RG SERVICOS ESPECIALIZADOS LTDA",
+      "modelo": "HP LaserJet M521dn",
+      "patrimonio": "216",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "9e982a26-60a2-43c0-8129-c52695e900a2",
+      "serial": "ZDDPB07JC10WFPJ",
+      "cliente": "EXPRESSO DOCUMENTOS DE VEICULOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "319",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d9fe6376-9be7-4f12-bd0e-311bac0d8ef1",
+      "serial": "CNF8H3G57T",
+      "cliente": "GICON CONTABILIDADE LTDA",
+      "modelo": "HP LaserJet 400 M425dn",
+      "patrimonio": "128",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "6da3fca4-795e-454f-acc9-8eb866ad85a4",
+      "serial": "088WB07M816WABA",
+      "cliente": "GICON CONTABILIDADE LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "431",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "3025c388-7321-4e44-bfba-9cb80ced573b",
+      "serial": "BRBFC5LC3N",
+      "cliente": "GICON CONTABILIDADE LTDA",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "106",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "52f12e69-eb06-47f7-87a7-623b9f896302",
+      "serial": "BRBHC2B74M",
+      "cliente": "GICON CONTABILIDADE LTDA",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "288",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8420e65c-19a0-4f1e-9ac2-662ecca60f40",
+      "serial": "BRCSH11017",
+      "cliente": "GICON CONTABILIDADE LTDA",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "100",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "ef5c4994-efaa-4996-83ff-090da75e1ed3",
+      "serial": "BRCSH8504C",
+      "cliente": "GICON CONTABILIDADE LTDA",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "215",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "2f48af06-69b6-4f8c-a0a1-2284b917d509",
+      "serial": "BRCSGCC09S",
+      "cliente": "GICON CONTABILIDADE LTDA",
+      "modelo": "HP LaserJet P3010",
+      "patrimonio": "67",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "602c89e2-4812-4c3a-9dae-875f39a2818d",
+      "serial": "ZDDPB07K612SN7Y",
+      "cliente": "KILPP & KOMNINOS ADVOGADOS ASSOCIADOS",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "346",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "65cab898-e1f2-4034-b923-26ed53bcc3bf",
+      "serial": "ZDDPB07M515VP6X",
+      "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "413",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "2708618d-6c41-4a97-9f1b-9dc7266f749d",
+      "serial": "ZDDPB07M515Q71M",
+      "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "393",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "3ff1b8d1-7c1d-4d77-b96b-5e397baf26f7",
+      "serial": "ZDDPB07K612SJGY",
+      "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "353",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "7b255d88-6e21-4ba1-bb9f-62049eb63621",
+      "serial": "ZDDPB07M515VRZJ",
+      "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "412",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "dbe27a53-73fd-4e43-a1ee-46a2b9b6dcef",
+      "serial": "ZDDPB07K9145NKY",
+      "cliente": "CENTRAIS DE ABASTECIMENTO DO ESTADO STA CATARINA SA - CONTRATO 2022.4",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d47513e9-a9ad-4318-8cfa-e6b4bb8c5115",
+      "serial": "BRBSN913FW",
+      "cliente": "TIAGO PEREIRA DOS SANTOS 06454059901",
+      "modelo": "HP Laser 432fdn",
+      "patrimonio": "724",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "222e9d5a-0ca2-470c-bd8f-34dcfada22ac",
+      "serial": "ZDDPB07K612SKTY",
+      "cliente": "COLEGIO CAMINHO FELIZ LTDA. - ME",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "347",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "af9e9911-ad99-4bd7-8c39-737f92cdee88",
+      "serial": "BRBST8F08Q",
+      "cliente": "TRK SERVICOS E COMERCIO LTDA",
+      "modelo": "HP Laser 432fdn",
+      "patrimonio": "728",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "d833ab6b-c600-459c-80f8-c8d4f05fb329",
+      "serial": "088WB07K612X1FN",
+      "cliente": "APUFSC - SINDICAL SINDICATO DOS PROFESSORES DAS UNIVERSIDADES FEDERAIS DE SANTA CATARINA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8dd921b9-e5e5-4504-9a54-b3b28bc1d6d3",
+      "serial": "088WB07M816W88L",
+      "cliente": "APUFSC - SINDICAL SINDICATO DOS PROFESSORES DAS UNIVERSIDADES FEDERAIS DE SANTA CATARINA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "01444b63-6674-48be-bbfd-56a91aaecf9b",
+      "serial": "ZDDPB07M515VPCX",
+      "cliente": "C. D'AVILA CORRETORA DE SEGUROS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "92762e66-028c-45fa-92cd-d711c667e0c8",
+      "serial": "U63267M2N318389",
+      "cliente": "RESIDENCIAL GERIATRICO VOVO LYDIA LTDA",
+      "modelo": "Brother MFC-8912DW",
+      "patrimonio": "57",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "8b36a66f-5dfc-4588-8506-2c6a76de3a6a",
+      "serial": "BRBSL4DN05",
+      "cliente": "ROSIMEIRE DA SILVA MEIRA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "334",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "047c4fa6-f2bd-45f8-a935-2e8104f46de6",
+      "serial": "ZDDPBQAJ800121L",
+      "cliente": "JM CONTADORES ASSOCIADOS LTDA",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "286",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "c95c10f7-7ab8-49eb-a3a0-276dc573782c",
+      "serial": "BRBSJ3F78X",
+      "cliente": "FLAVIO FEIJO SOCIEDADE INDIVIDUAL DE ADVOCACIA",
+      "modelo": "HP LaserJet M426fdw",
+      "patrimonio": "183",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "0fabf22b-7624-4ac0-b024-674cd6b420f1",
+      "serial": "ZDDPB07J91042LR",
+      "cliente": "ASSOCIACAO ATLETICA BANCO DO BRASIL",
+      "modelo": "Samsung SL-M4070FR",
+      "patrimonio": "294",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a4bc93fd-3c2b-4924-80f3-bc748651667e",
+      "serial": "U62712L4N266943",
+      "cliente": "ASSOCIACAO ATLETICA BANCO DO BRASIL - Ginasio",
+      "modelo": "Brother DCP-7065DN",
+      "patrimonio": "84",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "a9ade647-dfd3-48ed-843b-957b890ae1f1",
+      "serial": "088WB07K91405YN",
+      "cliente": "DESPACHANTE MARCELINO LTDA",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": "366",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "5e19145c-f809-4c2b-8b81-0a1181581671",
+      "serial": "35C50881",
+      "cliente": "BEBIDAS LEONARDO SELL LTDA",
+      "modelo": "Canon iR1643i II",
+      "patrimonio": "711",
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "e4bad203-cb34-4f1d-b7b3-f0c432e8dd5e",
+      "serial": "088WB07M816Q6GT",
+      "cliente": "CAIXA ASSISTENCIAL E BENEFICENTE DOS FUNCIONARIOS DA ACARESC",
+      "modelo": "Samsung M4080FX",
+      "patrimonio": null,
+      "dia_fechamento": null,
+      "ativo": true
+    },
+    {
+      "printer_id": "3c3861c0-f89e-40fa-bb68-4e300cf9144d",
+      "serial": "X4FH005828",
+      "cliente": "SOUZA SERVICOS DE LIMPEZA LTDA",
+      "modelo": "EPSON L396",
+      "patrimonio": "354",
+      "dia_fechamento": null,
+      "ativo": true
+    }
+  ]
+}

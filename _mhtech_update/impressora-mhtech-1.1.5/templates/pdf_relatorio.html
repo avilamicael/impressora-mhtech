@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    color: #1e293b;
+    background: #fff;
+    line-height: 1.4;
+  }
+
+  /* ── TOP STRIPE ── */
+  .stripe-dark { background-color: #0f172a; height: 8px; }
+  .stripe-blue { background-color: #2563eb; height: 3px; margin-bottom: 16px; }
+
+  /* ── HEADER ── */
+  .header-outer { width: 100%; border-collapse: collapse; }
+  .header-outer td { vertical-align: top; padding: 0; }
+  .header-title { font-size: 20pt; font-weight: bold; color: #0f172a; letter-spacing: -0.6px; line-height: 1.08; }
+  .header-sub { font-size: 7.5pt; color: #64748b; margin-top: 5px; letter-spacing: 1.4px; text-transform: uppercase; }
+  .header-meta { text-align: right; }
+  .meta-date { font-size: 14pt; font-weight: bold; color: #2563eb; line-height: 1.1; }
+  .meta-coleta { font-size: 7.5pt; color: #94a3b8; margin-top: 3px; }
+  .meta-serial { display: inline-block; background-color: #0f172a; color: #fff; font-size: 7.5pt; font-weight: bold; letter-spacing: 1px; padding: 3px 11px; margin-top: 6px; }
+
+  .divider-strong { border: none; border-top: 2px solid #0f172a; margin: 10px 0 2px 0; }
+
+  /* ── SECTION HEADER ── */
+  .section-head { width: 100%; border-collapse: collapse; margin: 11px 0 5px 0; }
+  .section-head td {
+    background-color: #eef2ff;
+    border-left: 3px solid #2563eb;
+    padding: 4px 12px;
+    font-size: 8pt; font-weight: bold; letter-spacing: 1.6px;
+    text-transform: uppercase; color: #1e3a8a;
+  }
+
+  /* ── GRID DE CARDS (dados) ── */
+  .grid { width: 100%; border-collapse: collapse; }
+  .grid td {
+    border: 1px solid #e8edf3;
+    padding: 4.5px 10px;
+    vertical-align: top;
+    background-color: #ffffff;
+  }
+  .card-lbl { color: #94a3b8; font-size: 6.3pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.7px; }
+  .card-val { color: #0f172a; font-size: 9pt; font-weight: bold; padding-top: 1px; }
+
+  /* ── STAT CARDS (contadores) ── */
+  .stat { width: 100%; border-collapse: collapse; }
+  .stat td {
+    border: 1px solid #e2e8f0;
+    padding: 7px 12px;
+    vertical-align: top;
+    background-color: #f8fafc;
+  }
+  .stat-lbl { color: #64748b; font-size: 6.6pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-num { color: #0f172a; font-size: 15pt; font-weight: bold; letter-spacing: -0.6px; padding-top: 2px; }
+  .stat-dt  { color: #94a3b8; font-size: 6.3pt; padding-top: 1px; }
+  .stat-total { background-color: #0f172a; border-color: #0f172a; }
+
+  /* ── SUPRIMENTOS ── */
+  .tbl { width: 100%; border-collapse: collapse; }
+  .tbl td { padding: 3px 12px; font-size: 8.5pt; color: #334155; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+  .tbl .thead-row td {
+    background-color: #f1f5f9; color: #64748b; font-size: 6.8pt; font-weight: bold;
+    letter-spacing: 1.3px; text-transform: uppercase; border-bottom: 1px solid #e2e8f0;
+  }
+  .tbl td.r { text-align: right; }
+  .sup-name { font-weight: bold; color: #0f172a; }
+  .sup-sub  { color: #64748b; font-size: 8pt; }
+  .bar-track { width: 118px; border-collapse: collapse; background-color: #e5e7eb; }
+  .bar-track td { padding: 0; line-height: 9px; font-size: 6px; border: none; }
+  .bar-ok   { background-color: #16a34a; }
+  .bar-warn { background-color: #f59e0b; }
+  .bar-low  { background-color: #dc2626; }
+  .bar-empty{ background-color: #cbd5e1; }
+  .pct-lbl { font-weight: bold; font-size: 9pt; color: #0f172a; text-align: right; }
+
+  /* ── FOOTER ── */
+  .footer-wrap { margin-top: 9px; border-top: 1px solid #e2e8f0; padding-top: 6px; }
+  .footer-table { width: 100%; border-collapse: collapse; }
+  .footer-table td { font-size: 7pt; color: #94a3b8; vertical-align: middle; }
+  .footer-table td.r { text-align: right; }
+  .footer-brand { font-weight: bold; color: #0f172a; font-size: 7.5pt; }
+
+  @page { size: A4; margin: 0.8cm 1.4cm 1.2cm 1.4cm; }
+</style>
+</head>
+<body>
+
+{% set cust = printer.customer or {} %}
+{% set loc  = printer.location or {} %}
+{% set addr = loc.address or {} %}
+
+{% set LABELS = {
+  'blackAndWhite': 'Impressao P&B',
+  'color': 'Impressao Colorida',
+  'a3BlackAndWhite': 'A3 P&B',
+  'a3Color': 'A3 Colorida',
+  'scan': 'Digitalizacao',
+  'colorLevel1Coverage': 'Cobertura Nivel 1',
+  'colorLevel2Coverage': 'Cobertura Nivel 2',
+  'colorLevel3Coverage': 'Cobertura Nivel 3'
+} %}
+{% set PRINT_TYPES = ['blackAndWhite', 'color', 'a3BlackAndWhite', 'a3Color'] %}
+{% set MAX_SUP = 9 %}
+
+{# soma total de impressao e coleta os contadores presentes #}
+{% set ns = namespace(total=0, dt='') %}
+{% set counters = [] %}
+{% for c in printer.counters %}
+  {% if c.type in PRINT_TYPES %}{% set ns.total = ns.total + c.totalCount %}{% endif %}
+  {% if c.dateOfCapture and not ns.dt %}{% set ns.dt = c.dateOfCapture %}{% endif %}
+{% endfor %}
+
+{# monta lista de cards: Total Geral primeiro (destaque), depois cada contador #}
+{% set cards = [] %}
+{% set _ = cards.append({'lbl': 'Total Geral', 'num': ns.total, 'dt': ns.dt, 'total': true}) %}
+{% for key in PRINT_TYPES %}
+  {% for c in printer.counters if c.type == key %}
+    {% set _ = cards.append({'lbl': LABELS.get(c.type, c.type), 'num': c.totalCount, 'dt': c.dateOfCapture, 'total': false}) %}
+  {% endfor %}
+{% endfor %}
+{% for c in printer.counters if c.type not in PRINT_TYPES %}
+  {% set _ = cards.append({'lbl': LABELS.get(c.type, c.type), 'num': c.totalCount, 'dt': c.dateOfCapture, 'total': false}) %}
+{% endfor %}
+
+<!-- STRIPES -->
+<div class="stripe-dark"></div>
+<div class="stripe-blue"></div>
+
+<!-- HEADER -->
+<table class="header-outer">
+  <tr>
+    <td style="width:62%;">
+      <div class="header-title">Relatorio de<br/>Impressora</div>
+      <div class="header-sub">MH Tech Solucoes em TI &nbsp;&bull;&nbsp; Fechamento Dia {{ dia }}</div>
+    </td>
+    <td style="width:38%;" class="header-meta">
+      <div class="meta-date">{{ captured_at[8:10] }}/{{ captured_at[5:7] }}/{{ captured_at[:4] }}</div>
+      <div class="meta-coleta">Coleta {{ captured_at[11:16] }}</div>
+      <div><span class="meta-serial">{{ printer.serialNumber or '-' }}</span></div>
+    </td>
+  </tr>
+</table>
+
+<hr class="divider-strong"/>
+
+<!-- ── DADOS DA IMPRESSORA (grid de cards 3 col) ── -->
+<table class="section-head"><tr><td>Dados da Impressora</td></tr></table>
+
+{% set dados = [
+  {'l':'Fabricante','v': printer.manufacturer or '-'},
+  {'l':'Modelo','v': printer.model or '-'},
+  {'l':'Conexao','v': printer.type | conexao},
+  {'l':'Cor','v': printer.color | cor_impressora},
+  {'l':'Status','v': printer.status | status_impressora},
+  {'l':'Firmware','v': printer.firmwareVersion or '-'},
+  {'l':'IP','v': printer.ipAddress or '-'},
+  {'l':'MAC','v': printer.macAddress or '-'},
+  {'l':'Serial','v': printer.serialNumber or '-'},
+  {'l':'Patrimonio','v': printer.assetNumber or '-'},
+  {'l':'Ponto de instalacao','v': printer.installationPoint or '-'},
+  {'l':'Contrato','v': printer.contractName or '-'},
+  {'l':'Ultima comunicacao','v': (printer.lastCommunication[8:10] ~ '/' ~ printer.lastCommunication[5:7] ~ '/' ~ printer.lastCommunication[:4] ~ ' ' ~ printer.lastCommunication[11:16]) if printer.lastCommunication else '-'},
+  {'l':'Observacao','v': printer.observation or '-'}
+] %}
+{% for row in dados | batch(3) %}
+<table class="grid">
+  <tr>
+    {% for d in row %}
+    <td style="width:33.33%;">
+      <div class="card-lbl">{{ d.l }}</div>
+      <div class="card-val">{{ d.v }}</div>
+    </td>
+    {% endfor %}
+  </tr>
+</table>
+{% endfor %}
+
+<!-- ── CLIENTE E LOCALIZACAO ── -->
+<table class="section-head"><tr><td>Cliente e Localizacao</td></tr></table>
+
+<table class="grid">
+  <tr>
+    <td style="width:50%;">
+      <div class="card-lbl">Cliente</div>
+      <div class="card-val">{{ (cust.name or '-') | truncate(46, True, '…') }}</div>
+    </td>
+    <td style="width:50%;">
+      <div class="card-lbl">Localizacao</div>
+      <div class="card-val">{{ (addr.name or '-') | truncate(46, True, '…') }}</div>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:50%;">
+      <div class="card-lbl">Endereco</div>
+      <div class="card-val">{{ (addr.street ~ (', ' ~ addr.number if addr.number else '')) | truncate(46, True, '…') if addr.street else '-' }}</div>
+    </td>
+    <td style="width:50%;">
+      <div class="card-lbl">Bairro</div>
+      <div class="card-val">{{ addr.neighborhood or '-' }}</div>
+    </td>
+  </tr>
+</table>
+<table class="grid">
+  <tr>
+    <td style="width:33.33%;">
+      <div class="card-lbl">Cidade / UF</div>
+      <div class="card-val">{{ addr.city or '-' }} / {{ addr.state or '-' }}</div>
+    </td>
+    <td style="width:33.33%;">
+      <div class="card-lbl">CEP</div>
+      <div class="card-val">{{ addr.zipCode or '-' }}</div>
+    </td>
+    <td style="width:33.34%;">
+      <div class="card-lbl">Departamento</div>
+      <div class="card-val">{{ loc.department or '-' }}</div>
+    </td>
+  </tr>
+</table>
+
+<!-- ── CONTADORES (stat cards) ── -->
+<table class="section-head"><tr><td>Contadores</td></tr></table>
+
+{% for row in cards | batch(4) %}
+<table class="stat">
+  <tr>
+    {% set w = (100.0 / (row | length)) | round(2) %}
+    {% for c in row %}
+    <td style="width:{{ w }}%;{% if c.total %} background-color:#0f172a; border-color:#0f172a;{% endif %}">
+      <div class="stat-lbl"{% if c.total %} style="color:#93c5fd;"{% endif %}>{{ c.lbl }}</div>
+      <div class="stat-num"{% if c.total %} style="color:#ffffff;"{% endif %}>{{ "{:,}".format(c.num).replace(",",".") }}</div>
+      <div class="stat-dt"{% if c.total %} style="color:#64748b;"{% endif %}>{% if c.dt %}{{ c.dt[8:10] }}/{{ c.dt[5:7] }}/{{ c.dt[:4] }}{% endif %}</div>
+    </td>
+    {% endfor %}
+  </tr>
+</table>
+{% endfor %}
+
+<!-- ── SUPRIMENTOS ── -->
+{% if printer.supplies %}
+<table class="section-head"><tr><td>Suprimentos e Pecas</td></tr></table>
+
+<table class="tbl">
+  <tr class="thead-row">
+    <td style="width:38%;">Descricao</td>
+    <td style="width:16%;">Tipo</td>
+    <td style="width:12%;">Cor</td>
+    <td style="width:26%;">Nivel informado</td>
+    <td class="r" style="width:8%;">%</td>
+  </tr>
+  {% for s in printer.supplies[:MAX_SUP] %}
+  {% set pct = s.level.percentageValue | int %}
+  {% if pct >= 50 %}{% set cls = 'ok' %}
+  {% elif pct >= 20 %}{% set cls = 'warn' %}
+  {% elif pct > 0 %}{% set cls = 'low' %}
+  {% else %}{% set cls = 'empty' %}{% endif %}
+  {% set fill = [ [ (1.18 * pct) | round | int, 117 ] | min, 1 ] | max %}
+  <tr>
+    <td class="sup-name" style="width:38%;">{{ s.description | suprimento | truncate(42, True, '…') }}</td>
+    <td class="sup-sub" style="width:16%;">{{ s.type or '—' }}</td>
+    <td class="sup-sub" style="width:12%;">{{ s.color | cor_suprimento }}</td>
+    <td style="width:26%;">
+      <table class="bar-track" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="bar-{{ cls }}" style="width:{{ fill }}px; padding:0;">{% if fill >= 59 %}&nbsp;{% endif %}</td>
+          <td style="width:{{ 118 - fill }}px; padding:0;">{% if fill < 59 %}&nbsp;{% endif %}</td>
+        </tr>
+      </table>
+    </td>
+    <td class="pct-lbl" style="width:8%;">{{ pct }}%</td>
+  </tr>
+  {% endfor %}
+  {% if printer.supplies | length > MAX_SUP %}
+  <tr>
+    <td colspan="5" style="font-size:7.5pt; color:#94a3b8; font-style:italic;">
+      + {{ printer.supplies | length - MAX_SUP }} suprimento(s) adicional(is) disponivel(is) no portal
+    </td>
+  </tr>
+  {% endif %}
+</table>
+{% endif %}
+
+<!-- ── FOOTER ── -->
+<div class="footer-wrap">
+  <table class="footer-table">
+    <tr>
+      <td><span class="footer-brand">MH Tech</span> Solucoes em TI</td>
+      <td class="r">
+        Gerado em {{ captured_at[8:10] }}/{{ captured_at[5:7] }}/{{ captured_at[:4] }}
+        &nbsp;&bull;&nbsp; Fechamento Dia {{ dia }}
+        &nbsp;&bull;&nbsp; {{ printer.serialNumber }}
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

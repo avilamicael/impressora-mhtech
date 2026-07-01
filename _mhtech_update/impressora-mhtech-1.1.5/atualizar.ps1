@@ -103,10 +103,8 @@ try {
     if (-not $src) { throw 'Falha ao extrair o pacote baixado.' }
 
     # ---- 5) Encerra o app em execucao -------------------------------------
-    # Stop-Process (nativo) em vez de taskkill: nao promove stderr a erro
-    # terminante e nao quebra se algum pythonw nao puder ser encerrado.
     Step 'Encerrando o app atual...'
-    try { Get-Process -Name pythonw -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue } catch {}
+    taskkill /f /im pythonw.exe 2>$null | Out-Null
     Start-Sleep -Seconds 2
 
     # ---- 6) Aplica os arquivos (preservando dados do cliente) -------------
