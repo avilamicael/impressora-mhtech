@@ -119,8 +119,14 @@ try {
     Step 'Reiniciando o app...'
     $pyw   = Join-Path $Root 'venv\Scripts\pythonw.exe'
     $appPy = Join-Path $Root 'app.py'
-    # Aspas no argumento: caminhos com espaco (ex.: C:\Users\MH TECH\...) quebram sem elas.
-    Start-Process -FilePath $pyw -ArgumentList ('"' + $appPy + '"') -WorkingDirectory $Root
+    # Chamada direta via .NET (CreateProcess puro): evita as quirks do
+    # Start-Process com working directory / perfil de usuario em algumas maquinas.
+    $psi = New-Object System.Diagnostics.ProcessStartInfo
+    $psi.FileName         = $pyw
+    $psi.Arguments        = '"' + $appPy + '"'
+    $psi.WorkingDirectory = $Root
+    $psi.UseShellExecute  = $false
+    [System.Diagnostics.Process]::Start($psi) | Out-Null
 
     # ---- 9) Limpeza --------------------------------------------------------
     Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue
