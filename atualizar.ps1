@@ -106,8 +106,10 @@ try {
 
     # ---- 8) Reinicia o app em segundo plano -------------------------------
     Step 'Reiniciando o app...'
-    $pyw = Join-Path $Root 'venv\Scripts\pythonw.exe'
-    Start-Process -FilePath $pyw -ArgumentList (Join-Path $Root 'app.py') -WorkingDirectory $Root
+    $pyw   = Join-Path $Root 'venv\Scripts\pythonw.exe'
+    $appPy = Join-Path $Root 'app.py'
+    # Aspas no argumento: caminhos com espaco (ex.: C:\Users\MH TECH\...) quebram sem elas.
+    Start-Process -FilePath $pyw -ArgumentList ('"' + $appPy + '"') -WorkingDirectory $Root
 
     # ---- 9) Limpeza --------------------------------------------------------
     Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue
