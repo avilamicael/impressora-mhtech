@@ -31,7 +31,7 @@ if (-not (Test-Path (Join-Path $Root 'venv\Scripts\pythonw.exe'))) {
 
 # Arquivos/pastas do cliente que NUNCA devem ser sobrescritos
 $ExcludeFiles = @('config.json')
-$ExcludeDirs  = @('venv', 'snapshots', 'faturamento', '__pycache__', '.git')
+$ExcludeDirs  = @('venv', 'snapshots', 'faturamento', '__pycache__', '.git', '_mhtech_update')
 
 function Step($m) { Write-Host "  $m" }
 
@@ -86,7 +86,10 @@ try {
     Write-Host ''
 
     # ---- 4) Baixa e extrai o pacote ---------------------------------------
-    $tmp = Join-Path $env:TEMP ('mhtech_update_' + [Guid]::NewGuid().ToString('N'))
+    # Usa uma pasta temporaria DENTRO da instalacao (caminho limpo, sem nomes
+    # curtos 8.3 tipo C:\Users\MHTECH~1 do %TEMP%, que quebram o Remove-Item).
+    $tmp = Join-Path $Root '_mhtech_update'
+    if (Test-Path $tmp) { try { Remove-Item $tmp -Recurse -Force } catch {} }
     New-Item -ItemType Directory -Path $tmp -Force | Out-Null
     $zip = Join-Path $tmp 'release.zip'
     $zipUrl = "https://github.com/$Repo/archive/refs/tags/$remoteTag.zip"
@@ -118,8 +121,8 @@ try {
     # A atualizacao (codigo + dependencias) ja foi aplicada com sucesso aqui.
     # A partir deste ponto, qualquer falha NAO invalida o update.
 
-    # ---- 8) Limpeza --------------------------------------------------------
-    Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue
+    # ---- 8) Limpeza (nunca pode quebrar o update) -------------------------
+    try { Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue } catch {}
 
     # ---- 9) Reinicia o app (best-effort) ----------------------------------
     # Usa o mesmo mecanismo do start.bat (comando 'start' do cmd), que ja
