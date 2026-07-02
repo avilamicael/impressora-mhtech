@@ -1,9 +1,0 @@
-venv/*
-printwayy.log
-fechamento_auto.log
-snapshots/*
-faturamento/*
-__pycache__/
-*.pyc
-exemplo1.jpeg
-exemplo2.pdf
