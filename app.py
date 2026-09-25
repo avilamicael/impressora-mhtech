@@ -141,8 +141,18 @@ def get_config_map() -> dict:
 # ── Scheduler ─────────────────────────────────────────────────────────────────
 
 def _start_scheduler():
-    from fechamento_auto import auto_fechamento_job
+    from datetime import timedelta
+    from fechamento_auto import auto_fechamento_job, recuperar_fechamentos_perdidos
     scheduler = BackgroundScheduler(timezone="America/Sao_Paulo")
+    # Na subida do app, gera fechamentos perdidos enquanto o app estava fechado
+    scheduler.add_job(
+        func=lambda: recuperar_fechamentos_perdidos(app),
+        trigger="date",
+        run_date=datetime.now() + timedelta(seconds=60),
+        id="recuperar_fechamentos",
+        name="Recuperar fechamentos perdidos",
+        replace_existing=True,
+    )
     scheduler.add_job(
         func=lambda: auto_fechamento_job(app),
         trigger=CronTrigger(hour=12, minute=0),
@@ -370,6 +380,8 @@ def api_fechamento_gerar():
     out_dir = FATURAMENTO / mes_label / f"fechamento_dia_{dia:02d}"
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    from fechamento_auto import pdf_name_for
+
     gerados = []
     for p in data.get("printers", []):
         cfg = cfg_map.get(p["id"], {})
@@ -377,32 +389,31 @@ def api_fechamento_gerar():
         if obs != str(dia) or not cfg.get("ativo", True):
             continue
 
-        html = render_template(
-            "pdf_relatorio.html",
-            printer=p,
-            captured_at=data.get("capturedAt", ""),
-            dia=dia,
-        )
-
-        cliente    = (p.get("customer") or {}).get("name", "cliente").replace(" ", "_")
-        patrimonio = p.get("assetNumber", "sem_patrimonio").replace(" ", "_")
-        pdf_name   = f"{cliente}_{patrimonio}.pdf"
+        pdf_name = pdf_name_for(p)
         pdf_path = out_dir / pdf_name
 
         # Gera PDF via xhtml2pdf (puro Python, sem dependencias externas)
+        html = ""
         try:
+            html = render_template(
+                "pdf_relatorio.html",
+                printer=p,
+                captured_at=data.get("capturedAt", ""),
+                dia=dia,
+            )
             from xhtml2pdf import pisa
             with open(pdf_path, "wb") as pdf_file:
                 result = pisa.CreatePDF(html.encode("utf-8"), dest=pdf_file, encoding="utf-8")
             if result.err:
                 raise RuntimeError(f"xhtml2pdf error: {result.err}")
             gerados.append(pdf_name)
-        except Exception as e:
-            app.logger.error("Erro ao gerar PDF %s: %s", pdf_name, e)
+        except Exception:
+            app.logger.exception("Erro ao gerar PDF %s", pdf_name)
             # Fallback: salva HTML
-            html_path = out_dir / pdf_name.replace(".pdf", ".html")
-            html_path.write_text(html, encoding="utf-8")
-            gerados.append(html_path.name)
+            if html:
+                html_path = out_dir / pdf_name.replace(".pdf", ".html")
+                html_path.write_text(html, encoding="utf-8")
+                gerados.append(html_path.name)
 
     return jsonify({"ok": True, "gerados": gerados, "pasta": str(out_dir)})
 
